@@ -124,6 +124,10 @@
       if (region !== "all" && origin && origin.region !== region) return false;
       if (query && !haystack(f).includes(query)) return false;
       return true;
+    }).sort((a, b) => {
+      const da = a.date + a.roll + a.origin;
+      const db = b.date + b.roll + b.origin;
+      return da < db ? -1 : da > db ? 1 : 0;
     });
   }
 

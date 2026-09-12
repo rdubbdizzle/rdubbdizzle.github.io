@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Travis AFB Space-A — SpaceAFinder</title>
+  <meta name="description" content="Travis AFB passenger terminal: 72-hour Space-A outlook, signup, hours, and roll-call recording." />
+  <meta name="theme-color" content="#090b10" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+<div class="site-wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M6 22h20M10 18h12M14 14h8" stroke="currentColor" stroke-width="2" fill="none"/><path d="M16 8l3 5h-6z" fill="currentColor"/></svg>
+      </span>
+      <span class="brand-name">SpaceAFinder</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Flights</a>
+      <a href="jblm.html">McChord</a>
+      <a class="active" href="travis.html">Travis</a>
+      <a href="guide.html">How it works</a>
+      <a class="pong-link" href="pong.html">Terminal Pong</a>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <a class="crumb" href="index.html">← All terminals</a>
+    <div class="kicker">KSUU · Fairfield, CA</div>
+    <h1>Travis Air Force Base</h1>
+    <p class="lede" style="color:var(--fg-muted);max-width:52ch;margin-top:12px">West Coast C-5/C-17 hub and Patriot Express gateway to Hickam. Sign up by email, watch the dated 72-hour PDF, and call the recording before you drive.</p>
+  </div>
+
+  <section class="section">
+    <dl class="info-grid">
+      <div class="stat"><dt>Service counter</dt><dd><a href="tel:+17074241854">(707) 424-1854</a></dd></div>
+      <div class="stat"><dt>Recording</dt><dd><a href="tel:+17074241854">(707) 424-1854 opt 2</a></dd></div>
+      <div class="stat"><dt>Hours</dt><dd>0400–2200 daily</dd></div>
+      <div class="stat"><dt>Sign up</dt><dd><a href="mailto:60aps.SpaceA@us.af.mil">60aps.SpaceA@us.af.mil</a></dd></div>
+    </dl>
+    <div class="cta-row" style="justify-content:flex-start">
+      <a class="btn btn-primary" href="https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Travis-AFB-Passenger-Terminal/">Official AMC page</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Current 72-hour outlook</h2>
+      <div class="meta" id="asof"></div>
+    </div>
+    <div class="board" id="board" data-origin="suu"></div>
+  </section>
+
+  <section class="section">
+    <div class="prose">
+      <h2>How to sign up from Travis</h2>
+      <p>Email the 60 APS Space-A desk. Do not send SSN or date of birth. Include rank, full name, branch, status, dependents traveling, seats needed, eligibility category, leave dates, and up to five destinations. Patriot Express rotations to Hickam fill fast — show early for roll call.</p>
+      <p>Travis posts a new dated 72-hour file most days (<span class="tabular">TRAVIS_72HRS_DDMMMYY.pdf</span>). The 24-hour roll-call PDF is yesterday’s results, not tomorrow’s seats.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>Unofficial snapshot of the public AMC outlook. Verify with the recording before you roll.</p>
+      <p><a href="pong.html">Play Terminal Pong</a></p>
+    </div>
+  </footer>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

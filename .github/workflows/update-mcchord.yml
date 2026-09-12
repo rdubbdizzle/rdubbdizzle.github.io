@@ -1,4 +1,4 @@
-name: Update McChord board
+name: Update flight boards
 
 on:
   schedule:
@@ -39,5 +39,5 @@ jobs:
             echo "Outlook unchanged"
             exit 0
           fi
-          git commit -m "Update McChord 72-hour board"
+          git commit -m "Update Space-A flight boards"
           git push

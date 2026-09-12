@@ -1,145 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JB Lewis-McChord Space-A — SpaceAFinder</title>
+  <meta name="description" content="McChord Field passenger terminal: 72-hour Space-A outlook, signup, hours, and roll-call recording." />
+  <meta name="theme-color" content="#090b10" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+<div class="site-wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M6 22h20M10 18h12M14 14h8" stroke="currentColor" stroke-width="2" fill="none"/><path d="M16 8l3 5h-6z" fill="currentColor"/></svg>
+      </span>
+      <span class="brand-name">SpaceAFinder</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="index.html">Flights</a>
+      <a class="active" href="jblm.html">McChord</a>
+      <a href="guide.html">How it works</a>
+      <a class="pong-link" href="pong.html">Terminal Pong</a>
+    </nav>
+  </header>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Joint Base Lewis-McChord - SpaceAFinder.com</title>
-        <style>
-            
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            min-height: 100vh;
-        }
-        .site-header {
-            background-color: #27247B;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 24px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .site-header a {
-            color: white;
-            text-decoration: none;
-        }
-        .page-header {
-            background-color: #27247B;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .page-header h1 {
-            font-size: 36px;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #27247B;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        .back-link:hover {
-            color: #1a1852;
-            transform: translateX(-5px);
-        }
-        .nav-section {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        th {
-            background-color: #27247B;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-            background-color: white;
-        }
-        tr:nth-child(even) td {
-            background-color: #f8f9fa;
-        }
-        tr:hover td {
-            background-color: #f0f0f0;
-        }
-        .timestamp {
-            text-align: right;
-            color: #666;
-            font-size: 0.9em;
-            margin-top: 20px;
-            font-style: italic;
-        }
-    
-            .nav-links {
-                list-style: none;
-                padding: 0;
-            }
-            .nav-links li {
-                margin: 15px 0;
-            }
-            .nav-links a {
-                color: #333;
-                text-decoration: none;
-                font-size: 18px;
-                display: block;
-                padding: 20px;
-                border-radius: 8px;
-                transition: all 0.3s ease;
-                background-color: #f8f8f8;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            }
-            .nav-links a:hover {
-                background-color: #27247B;
-                color: white;
-                transform: translateX(10px);
-            }
-        </style>
-    </head>
-    <body>
-        <div class="site-header">
-            <a href="index.html">SpaceAFinder.com</a>
-        </div>
-        <div class="container">
-            <a href="index.html" class="back-link">← Back to Terminal Directory</a>
-            <div class="page-header">
-                <h1>Joint Base Lewis-McChord (JBLM)</h1>
-            </div>
-            <div class="nav-section">
-                <ul class="nav-links">
-                    <li><a href="schedule.html">McChord Field (TCM) 72-Hour Schedule</a></li>
-                    <li><a href="pong.html">Terminal Pong</a></li>
-                    <li><a href="history.html">McChord Field (TCM) Flight History</a></li>
-                </ul>
-            </div>
-        </div>
-    </body>
-    </html>
-    
+  <div class="page-hero">
+    <a class="crumb" href="index.html">← All terminals</a>
+    <div class="kicker">KTCM · Tacoma, WA</div>
+    <h1>Joint Base Lewis-McChord</h1>
+    <p class="lede" style="color:var(--fg-muted);max-width:52ch;margin-top:12px">McChord Field is the Pacific Northwest C-17 gateway. Sign up by email, watch the 72-hour PDF, and call the recording before you drive.</p>
+  </div>
+
+  <section class="section">
+    <dl class="info-grid">
+      <div class="stat"><dt>Service counter</dt><dd><a href="tel:+12539827259">(253) 982-7259</a></dd></div>
+      <div class="stat"><dt>72-hour recording</dt><dd><a href="tel:+12539827268">(253) 982-7268</a></dd></div>
+      <div class="stat"><dt>Hours</dt><dd>0600–1800 daily · opens 30 min before after-hours roll call</dd></div>
+      <div class="stat"><dt>Sign up</dt><dd><a href="mailto:spacea.mcchord@us.af.mil">spacea.mcchord@us.af.mil</a></dd></div>
+    </dl>
+    <div class="cta-row" style="justify-content:flex-start">
+      <a class="btn btn-primary" href="https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf">72-hour PDF</a>
+      <a class="btn btn-ghost" href="schedule.html">Readable schedule</a>
+      <a class="btn btn-ghost" href="https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Lewis-McChord-Passenger-Terminal/">Official AMC page</a>
+      <a class="btn btn-ghost" href="history.html">Roll-call history</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Current 72-hour outlook</h2>
+      <div class="meta" id="asof"></div>
+    </div>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section class="section">
+    <div class="prose">
+      <h2>How to sign up from McChord</h2>
+      <p>Email the terminal. Do not send SSN or date of birth. Include email, rank, full name, branch, status, dependents traveling, seats needed, eligibility category, leave dates, whether you have overseas documents in hand, and up to five destinations.</p>
+      <p>Terminal: 1422 Union Ave, Bldg 1179, McChord Field, WA 98438. Two bags, 70 lb each, 62 linear inches. Long-term parking is available up to 60 days with a pass from passenger service — use the lot behind the trees, not the 24-hour lot in front.</p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>Unofficial snapshot of the public AMC outlook. Verify with the recording before you roll.</p>
+      <p><a href="pong.html">Play Terminal Pong</a></p>
+    </div>
+  </footer>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+<script>
+  (function () {
+    const board = document.getElementById("board");
+    const tcm = window.SAF.flights.filter((f) => f.origin === "tcm");
+    window.SAFApp.renderFlights(tcm, board, { upcomingOnly: false });
+  })();
+</script>
+</body>
+</html>

@@ -1,173 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SpaceAFinder — Find upcoming Space-A flights</title>
+  <meta name="description" content="Find upcoming Space-Available military flights. Search terminals, read 72-hour outlooks, and get to roll call." />
+  <meta name="theme-color" content="#090b10" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans+Condensed:wght@600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+  <meta property="og:title" content="SpaceAFinder — Find upcoming Space-A flights" />
+  <meta property="og:description" content="Search terminals and 72-hour Space-A outlooks. Unofficial. Seats are never guaranteed." />
+</head>
+<body>
+<div class="site-wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M6 22h20M10 18h12M14 14h8" stroke="currentColor" stroke-width="2" fill="none"/><path d="M16 8l3 5h-6z" fill="currentColor"/></svg>
+      </span>
+      <span class="brand-name">SpaceAFinder</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="active" href="index.html">Flights</a>
+      <a href="jblm.html">McChord</a>
+      <a href="guide.html">How it works</a>
+      <a class="pong-link" href="pong.html">Terminal Pong</a>
+    </nav>
+  </header>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>SpaceAFinder.com</title>
-        <style>
-            
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            min-height: 100vh;
-        }
-        .site-header {
-            background-color: #27247B;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 24px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .site-header a {
-            color: white;
-            text-decoration: none;
-        }
-        .page-header {
-            background-color: #27247B;
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .page-header h1 {
-            font-size: 36px;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: #27247B;
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s ease;
-        }
-        .back-link:hover {
-            color: #1a1852;
-            transform: translateX(-5px);
-        }
-        .nav-section {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            border: none;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        th {
-            background-color: #27247B;
-            color: white;
-            padding: 15px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-        }
-        td {
-            padding: 12px;
-            text-align: center;
-            border-bottom: 1px solid #eee;
-            background-color: white;
-        }
-        tr:nth-child(even) td {
-            background-color: #f8f9fa;
-        }
-        tr:hover td {
-            background-color: #f0f0f0;
-        }
-        .timestamp {
-            text-align: right;
-            color: #666;
-            font-size: 0.9em;
-            margin-top: 20px;
-            font-style: italic;
-        }
-    
-            .nav-links {
-                list-style: none;
-                padding: 0;
-            }
-            .nav-links li {
-                margin: 10px 0;
-            }
-            .nav-links a {
-                color: #333;
-                text-decoration: none;
-                font-size: 16px;
-                display: block;
-                padding: 15px;
-                border-radius: 8px;
-                transition: all 0.3s ease;
-                background-color: #f8f8f8;
-            }
-            .nav-links a:hover {
-                background-color: #27247B;
-                color: white;
-                transform: translateX(10px);
-            }
-            .terminal-section {
-                margin-left: 20px;
-            }
-            .main-section {
-                font-weight: 600;
-                font-size: 18px;
-                color: #27247B;
-                padding: 15px;
-                background-color: #f0f0f0;
-                border-radius: 8px;
-                margin: 15px 0;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            }
-            h2 {
-                color: #27247B;
-                border-bottom: 2px solid #27247B;
-                padding-bottom: 15px;
-                margin-top: 0;
-                font-size: 24px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="site-header">
-            <a href="index.html">SpaceAFinder.com</a>
-        </div>
-        <div class="page-header">
-            <h1>Space-A Flight Directory</h1>
-        </div>
-        <div class="container">
-            <div class="nav-section">
-                <h2>Passenger Terminal Directory</h2>
-                <ul class="nav-links">
-                    <li class="main-section">AMC CONUS TERMINALS</li>
-                    <li class="terminal-section">
-                        <ul class="nav-links">
-                            <li><a href="jblm.html">JOINT BASE LEWIS-MCCHORD, WA</a></li>
-                        </ul>
-                    </li>
-                    <li class="main-section">EUCOM TERMINALS</li>
-                    <li class="main-section">INDOPACOM TERMINALS</li>
-                    <li class="main-section">CENTCOM TERMINALS</li>
-                    <li class="main-section">SOUTHCOM TERMINALS</li>
-                    <li class="main-section">NON-AMC CONUS TERMINALS</li>
-                    <li class="main-section">ANG & RESERVE TERMINALS</li>
-                </ul>
-            </div>
-        </div>
-    </body>
-    </html>
-    
+  <section class="hero">
+    <div class="kicker">Space-available travel</div>
+    <h1>Find the next flight on the board.</h1>
+    <p class="lede">Search AMC passenger terminals and the latest 72-hour Space-A outlooks. Seats are never guaranteed until you make roll call.</p>
+    <div class="search-block">
+      <label class="search-shell">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="q" type="search" placeholder="Where do you want to go? Hawaii, Ramstein, McGuire…" autocomplete="off" />
+      </label>
+      <div class="chips" id="chips" role="tablist" aria-label="Filter by theater"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>The board</h2>
+      <div class="meta" id="asof"></div>
+    </div>
+    <div class="board" id="board"></div>
+    <div class="cta-row" style="margin-top:20px">
+      <a class="btn btn-primary" href="https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf">Official McChord 72-hour PDF</a>
+      <a class="btn btn-ghost" href="schedule.html">Full McChord outlook</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Passenger terminals</h2>
+      <div class="meta">Official AMC pages · signup emails · hours</div>
+    </div>
+    <div class="terminal-grid" id="terminals"></div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Three moves that get you on</h2>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="num">01</div>
+        <h3>Sign up early</h3>
+        <p>Email the terminal with leave papers as soon as your window opens. Seniority inside your category is the date-time of signup, not when you mark present.</p>
+      </article>
+      <article class="step">
+        <div class="num">02</div>
+        <h3>Watch the 72-hour</h3>
+        <p>Boards only firm up about three days out. Quiet weeks are normal. The recording and PDF beat rumors every time.</p>
+      </article>
+      <article class="step">
+        <div class="num">03</div>
+        <h3>Be present at roll call</h3>
+        <p>Mark present, then stand there when they call categories. A “0T” or TBD can still turn into a jet. Missing roll call is how people miss the jet.</p>
+      </article>
+    </div>
+    <div class="cta-row">
+      <a class="btn btn-ghost" href="guide.html">Read the full Space-A guide</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="pong-cta">
+      <div>
+        <div class="kicker">Between roll calls</div>
+        <h2>Terminal Pong</h2>
+        <p>The board is posted. The jet isn’t here yet. Kill the wait without leaving the terminal vibe.</p>
+        <a class="btn btn-primary" href="pong.html">Play Terminal Pong</a>
+      </div>
+      <div class="court-mini" aria-hidden="true">
+        <div class="net"></div>
+        <div class="pad-l"></div>
+        <div class="pad-r"></div>
+        <div class="ball"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <p>Unofficial. Not affiliated with DoD or AMC. Always verify with the passenger terminal. All flights subject to change without notice.</p>
+      <p><a href="guide.html">How Space-A works</a> · <a href="pong.html">Pong</a> · <a href="https://www.amc.af.mil/AMC-Travel-Site/">AMC Travel Site</a></p>
+    </div>
+  </footer>
+</div>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

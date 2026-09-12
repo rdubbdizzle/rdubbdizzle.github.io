@@ -1,0 +1,44 @@
+window.SAF = {
+  asOf: "2026-09-09T23:50:00-07:00",
+  asOfLabel: "McChord outlook · 9 Sep 2026, 2350L",
+  sourceUrl: "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
+  officialMcChord: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Lewis-McChord-Passenger-Terminal/",
+  flights: [
+    { id: "tcm-0910-kelly", origin: "tcm", date: "2026-09-10", roll: "07:00", dest: "Kelly Field, TX", destKey: "kelly skf san antonio lackland texas", seats: "0F", kind: "firm", note: "0 firm seats posted" },
+    { id: "tcm-0911-dyess", origin: "tcm", date: "2026-09-11", roll: "06:30", dest: "Dyess AFB, TX", destKey: "dyess dss abilene texas", seats: "TBD", kind: "tbd", note: "Seat count unpublished" },
+    { id: "tcm-0912-mcguire", origin: "tcm", date: "2026-09-12", roll: "11:50", dest: "McGuire AFB, NJ", destKey: "mcguire mguire wri jb mdl new jersey east coast", seats: "53F", kind: "firm", note: "53 firm seats posted" }
+  ],
+  regions: [
+    { id: "all", label: "All terminals" },
+    { id: "conus-west", label: "CONUS West" },
+    { id: "conus-east", label: "CONUS East" },
+    { id: "conus-south", label: "CONUS South" },
+    { id: "alaska", label: "Alaska" },
+    { id: "pacific", label: "Pacific" },
+    { id: "europe", label: "Europe" },
+    { id: "centcom", label: "CENTCOM" }
+  ],
+  terminals: [
+    { id: "tcm", icao: "KTCM", name: "JB Lewis-McChord", field: "McChord Field", city: "Tacoma, WA", region: "conus-west", tz: "America/Los_Angeles", hours: "0600–1800 daily", phone: "(253) 982-7259", recording: "(253) 982-7268", email: "spacea.mcchord@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Lewis-McChord-Passenger-Terminal/", pdf72: "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf", local: "jblm.html", featured: true },
+    { id: "sea", icao: "KSEA", name: "Seattle-Tacoma Gateway", field: "SEA Airport", city: "Seattle, WA", region: "conus-west", tz: "America/Los_Angeles", hours: "0700–1600 daily, plus departure nights", phone: "(253) 982-3504", recording: "(253) 982-0555", email: "seattle.gateway@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Seattle-Tacoma-International-Gateway/" },
+    { id: "suu", icao: "KSUU", name: "Travis AFB", field: "David Grant / PAX", city: "Fairfield, CA", region: "conus-west", tz: "America/Los_Angeles", hours: "0400–2200 daily", phone: "(707) 424-1854", recording: "(707) 424-1854 opt 2", email: "60aps.SpaceA@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Travis-AFB-Passenger-Terminal/" },
+    { id: "adw", icao: "KADW", name: "Joint Base Andrews", field: "Andrews", city: "Camp Springs, MD", region: "conus-east", tz: "America/New_York", hours: "0530–2200 daily", phone: "(301) 981-1854", recording: "(301) 981-3604 opt 2", email: "amc.spacea@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-Andrews-Passenger-Terminal/" },
+    { id: "wri", icao: "KWRI", name: "JB McGuire-Dix-Lakehurst", field: "McGuire Field", city: "Wrightstown, NJ", region: "conus-east", tz: "America/New_York", hours: "0700–0000", phone: "(609) 754-5023", recording: "", email: "305.APS.McGuire.Space.A@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Joint-Base-MDL-Passenger-Terminal/" },
+    { id: "bwi", icao: "KBWI", name: "Baltimore-Washington Gateway", field: "BWI", city: "Baltimore, MD", region: "conus-east", tz: "America/New_York", hours: "See 72-hour board", phone: "(609) 253-8825 opt 2", recording: "", email: "305APS.DET1.BWIPAX@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/" },
+    { id: "chs", icao: "KCHS", name: "Joint Base Charleston", field: "Charleston AFB", city: "Charleston, SC", region: "conus-east", tz: "America/New_York", hours: "See terminal page", phone: "(843) 963-3083", recording: "", email: "437APS.SpaceA@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/" },
+    { id: "dov", icao: "KDOV", name: "Dover AFB", field: "Dover", city: "Dover, DE", region: "conus-east", tz: "America/New_York", hours: "See terminal page", phone: "(302) 677-4088", recording: "", email: "", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/" },
+    { id: "skf", icao: "KSKF", name: "JB San Antonio-Lackland", field: "Kelly Field", city: "San Antonio, TX", region: "conus-south", tz: "America/Chicago", hours: "See terminal page", phone: "(210) 925-8714", recording: "", email: "502LRS.LGRDAS.spacea@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/" },
+    { id: "pob", icao: "KPOB", name: "Pope Army Airfield", field: "Pope Field", city: "Fort Liberty, NC", region: "conus-east", tz: "America/New_York", hours: "Open at roll call only", phone: "(910) 394-1003", recording: "(910) 394-1003", email: "43AMS.POPESPACEA.Travel@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Pope-Army-Airfield-Passenger-Terminal/" },
+    { id: "lrf", icao: "KLRF", name: "Little Rock AFB", field: "Little Rock", city: "Jacksonville, AR", region: "conus-south", tz: "America/Chicago", hours: "0800–1500 office", phone: "(501) 987-3118", recording: "", email: "", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CONUS-Terminals/Little-Rock-AFB-Passenger-Terminal/" },
+    { id: "edf", icao: "PAED", name: "JB Elmendorf-Richardson", field: "Elmendorf", city: "Anchorage, AK", region: "alaska", tz: "America/Anchorage", hours: "0600–2200", phone: "(907) 552-0200", recording: "", email: "spacea5@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Joint-Base-Elmendorf-Richardson-Passenger-Terminal/" },
+    { id: "eil", icao: "PAEI", name: "Eielson AFB", field: "Eielson", city: "Fairbanks, AK", region: "alaska", tz: "America/Anchorage", hours: "0730–1630 weekdays", phone: "(907) 377-1854", recording: "(907) 377-1623", email: "354LRS.EielsonSpaceA.SpaceA@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Eielson-AFB-Passenger-Terminal/" },
+    { id: "hik", icao: "PHIK", name: "JB Pearl Harbor-Hickam", field: "Hickam", city: "Honolulu, HI", region: "pacific", tz: "Pacific/Honolulu", hours: "0400–2200 daily", phone: "(808) 789-7264", recording: "", email: "735ams.trps@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Joint-Base-Pearl-Harbor-Hickam-Passenger-Terminal/" },
+    { id: "dna", icao: "RODN", name: "Kadena AB", field: "Kadena", city: "Okinawa, Japan", region: "pacific", tz: "Asia/Tokyo", hours: "See terminal page", phone: "011-81-98-961-3784", recording: "", email: "733ams.space-available@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/" },
+    { id: "okoa", icao: "RJTY", name: "Yokota AB", field: "Yokota", city: "Tokyo, Japan", region: "pacific", tz: "Asia/Tokyo", hours: "See terminal page", phone: "011-81-42-552-2511", recording: "", email: "", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/Yokota-AB-Passenger-Terminal/" },
+    { id: "osn", icao: "RKSO", name: "Osan AB", field: "Osan", city: "Pyeongtaek, Korea", region: "pacific", tz: "Asia/Seoul", hours: "See terminal page", phone: "", recording: "", email: "", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/" },
+    { id: "uam", icao: "PGUA", name: "Andersen AFB", field: "Andersen", city: "Yigo, Guam", region: "pacific", tz: "Pacific/Guam", hours: "See terminal page", phone: "(671) 366-3545", recording: "", email: "spacea.signup@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/PACOM-Terminals/" },
+    { id: "rms", icao: "ETAR", name: "Ramstein AB", field: "Ramstein", city: "Ramstein, Germany", region: "europe", tz: "Europe/Berlin", hours: "See terminal page", phone: "", recording: "", email: "", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/" },
+    { id: "avb", icao: "LIPA", name: "Aviano AB", field: "Aviano", city: "Aviano, Italy", region: "europe", tz: "Europe/Rome", hours: "See terminal page", phone: "011-39-0434-30-7680", recording: "", email: "AvianoSpaceA@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/EUCOM-Terminals/" },
+    { id: "xjd", icao: "OTBH", name: "Al Udeid AB", field: "Al Udeid", city: "Ar Rayyan, Qatar", region: "centcom", tz: "Asia/Qatar", hours: "24 hours", phone: "DSN 318-455-5285", recording: "", email: "379eaps.pax.signup@us.af.mil", page: "https://www.amc.af.mil/AMC-Travel-Site/Terminals/CENTCOM-Terminals/379-EAPS-Terminal/" }
+  ]
+};

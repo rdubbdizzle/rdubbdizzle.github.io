@@ -41,7 +41,7 @@
       <h2>Posted missions</h2>
       <div class="meta" id="asof"></div>
     </div>
-    <div class="board" id="board"></div>
+    <div class="board" id="board" data-origin="tcm"></div>
     <div class="cta-row" style="justify-content:flex-start;margin-top:20px">
       <a class="btn btn-primary" href="https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf">Open source PDF</a>
       <a class="btn btn-ghost" href="tel:+12539827268">Call (253) 982-7268</a>
@@ -57,11 +57,5 @@
 </div>
 <script src="js/data.js"></script>
 <script src="js/app.js"></script>
-<script>
-  (function () {
-    const tcm = window.SAF.flights.filter((f) => f.origin === "tcm");
-    window.SAFApp.renderFlights(tcm, document.getElementById("board"), { upcomingOnly: false });
-  })();
-</script>
 </body>
 </html>

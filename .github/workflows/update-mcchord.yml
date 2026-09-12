@@ -1,0 +1,43 @@
+name: Update McChord board
+
+on:
+  schedule:
+    # ~07:00 and ~19:00 Pacific
+    - cron: "0 14 * * *"
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-mcchord
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install parser
+        run: pip install --quiet pypdf
+
+      - name: Pull official 72-hour PDF
+        run: python scripts/update_flights.py --self-test && python scripts/update_flights.py
+
+      - name: Commit if the board changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add js/flights.json
+          if git diff --staged --quiet; then
+            echo "Outlook unchanged"
+            exit 0
+          fi
+          git commit -m "Update McChord 72-hour board"
+          git push

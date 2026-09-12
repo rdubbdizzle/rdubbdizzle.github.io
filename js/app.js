@@ -137,8 +137,10 @@
   }
 
   function refresh() {
-    const flights = filteredFlights();
-    const upcoming = flights.filter((f) => statusFor(f) !== "passed");
+    const flights = filteredFlights().filter((f) => {
+      const only = board && board.getAttribute("data-origin");
+      return only ? f.origin === only : true;
+    });
     if (upcomingMount) {
       renderFlights(flights, upcomingMount, {
         upcomingOnly: true,
@@ -150,22 +152,39 @@
     if (tgrid) renderTerminals(filteredTerminals(), tgrid);
   }
 
-  if (asOf) asOf.textContent = data.asOfLabel;
-
-  if (chips) {
-    chips.innerHTML = data.regions.map((r) =>
-      `<button type="button" class="chip${r.id === "all" ? " active" : ""}" data-region="${r.id}">${r.label}</button>`
-    ).join("");
-    chips.addEventListener("click", (e) => {
-      const btn = e.target.closest("[data-region]");
-      if (!btn) return;
-      region = btn.getAttribute("data-region");
-      chips.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === btn));
-      refresh();
-    });
+  function applyBoard(payload) {
+    if (!payload || !Array.isArray(payload.flights)) return;
+    data.flights = payload.flights;
+    if (payload.asOf) data.asOf = payload.asOf;
+    if (payload.asOfLabel) data.asOfLabel = payload.asOfLabel;
   }
-  if (q) q.addEventListener("input", refresh);
 
-  refresh();
-  window.SAFApp = { parseRoll, statusFor, renderFlights, byId };
+  function boot() {
+    if (asOf) asOf.textContent = data.asOfLabel;
+    if (chips && !chips.dataset.ready) {
+      chips.dataset.ready = "1";
+      chips.innerHTML = data.regions.map((r) =>
+        `<button type="button" class="chip${r.id === "all" ? " active" : ""}" data-region="${r.id}">${r.label}</button>`
+      ).join("");
+      chips.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-region]");
+        if (!btn) return;
+        region = btn.getAttribute("data-region");
+        chips.querySelectorAll(".chip").forEach((c) => c.classList.toggle("active", c === btn));
+        refresh();
+      });
+    }
+    if (q && !q.dataset.ready) {
+      q.dataset.ready = "1";
+      q.addEventListener("input", refresh);
+    }
+    refresh();
+    window.SAFApp = { parseRoll, statusFor, renderFlights, byId };
+  }
+
+  boot();
+  fetch("js/flights.json", { cache: "no-store" })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((payload) => { applyBoard(payload); boot(); })
+    .catch(() => {});
 })();

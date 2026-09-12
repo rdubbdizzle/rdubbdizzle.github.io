@@ -40,7 +40,18 @@ ASOF_RE = re.compile(
     re.I,
 )
 FLIGHT_RE = re.compile(
-    r"\b(\d{3,4})\s+([A-Z0-9][A-Z0-9 .,'/&-]+?)\s+(TBD|VRC|SP|\d+[FT])\b",
+    r"\b(\d{3,4})\s+([A-Z0-9][A-Z0-9 .,'/&-]{1,80}?)\s+(TBD|VRC|SP|\d+[FT])\b",
+    re.I,
+)
+JUNK_DEST = re.compile(
+    r"roll call|destination|seats|daily|subject|notice|information|official|terminal",
+    re.I,
+)
+CLEAN_LINE_RE = re.compile(
+    r"(ROLL CALL(?:\s+DESTINATION)?(?:\s+SEATS)?|NO SCHEDULED FLIGHTS|"
+    r"0?600\s*[-–]\s*1800 daily\.?|"
+    r"ALL FLIGHTS SCHEDULES ARE SUBJECT TO CHANGE WITHOUT NOTICE|"
+    r"The McChord(?: Field)? Passenger Terminal is open to Official Business only\.)",
     re.I,
 )
 KEEP_UPPER = {
@@ -134,13 +145,15 @@ def parse_outlook(text: str, origin: str = "tcm") -> dict:
         start = m.end()
         end = day_matches[i + 1].start() if i + 1 < len(day_matches) else len(text)
         chunk = text[start:end]
-        if re.search(r"NO SCHEDULED FLIGHTS", chunk, re.I):
-            continue
-        # Flatten wrapped PDF lines so "0700\nKELLY FLD, TX\n0F" becomes one record.
+        chunk = CLEAN_LINE_RE.sub(" ", chunk)
         flat = re.sub(r"[ \t]*\n[ \t]*", " ", chunk)
         for fm in FLIGHT_RE.finditer(flat):
             roll_raw, dest_raw, seats = fm.group(1), fm.group(2), fm.group(3).upper()
+            if JUNK_DEST.search(dest_raw):
+                continue
             dest = pretty_dest(dest_raw)
+            if len(dest) < 4:
+                continue
             roll = hhmm(roll_raw)
             mmdd = date[5:7] + date[8:10]
             flights.append({
@@ -170,22 +183,46 @@ def pdf_text(path: Path) -> str:
     return "\n".join((page.extract_text() or "") for page in reader.pages)
 
 
+def fetch_url(url: str, timeout: int = 60) -> tuple[bytes, str]:
+    req = Request(url, headers=HEADERS)
+    with urlopen(req, timeout=timeout) as resp:
+        return resp.read(), resp.geturl()
+
+
 def fetch_pdf(dest: Path) -> None:
-    last_err: Exception | None = None
-    for attempt in range(3):
-        try:
-            req = Request(PDF_URL, headers=HEADERS)
-            with urlopen(req, timeout=45) as resp:
-                data = resp.read()
-            if data.startswith(b"%PDF"):
-                dest.write_bytes(data)
-                return
-            preview = data[:180].decode("utf-8", "replace").replace("\n", " ")
-            last_err = RuntimeError(f"AMC did not return a PDF (got {preview!r})")
-        except Exception as exc:
-            last_err = exc
-        time.sleep(2 * (attempt + 1))
-    raise last_err or RuntimeError("Failed to download McChord 72-hour PDF")
+    errors: list[str] = []
+    try:
+        data, _ = fetch_url(PDF_URL, timeout=45)
+        if data.startswith(b"%PDF"):
+            dest.write_bytes(data)
+            return
+        errors.append("direct: not a PDF")
+    except Exception as exc:
+        errors.append(f"direct: {exc}")
+
+    # AMC blocks most cloud IPs. Archive.org can still snapshot the public PDF.
+    try:
+        save_url = "https://web.archive.org/save/" + PDF_URL
+        data, final = fetch_url(save_url, timeout=90)
+        stamp = None
+        m = re.search(r"/web/(\d{14})/", final)
+        if m:
+            stamp = m.group(1)
+        if not stamp:
+            m = re.search(r"/web/(\d{14})/", data.decode("utf-8", "replace"))
+            if m:
+                stamp = m.group(1)
+        if stamp:
+            raw_url = f"https://web.archive.org/web/{stamp}id_/{PDF_URL}"
+            data, _ = fetch_url(raw_url, timeout=60)
+        if data.startswith(b"%PDF"):
+            dest.write_bytes(data)
+            return
+        errors.append("wayback: snapshot was not a PDF")
+    except Exception as exc:
+        errors.append(f"wayback: {exc}")
+
+    raise RuntimeError("Failed to download McChord 72-hour PDF (" + "; ".join(errors) + ")")
 
 
 def write_board(board: dict, path: Path) -> bool:
@@ -217,12 +254,17 @@ def self_test() -> None:
     fixture = Path(__file__).with_name("fixtures") / "tcm72.txt"
     board = parse_outlook(fixture.read_text())
     dests = [f["dest"] for f in board["flights"]]
-    assert board["asOfLabel"].startswith("McChord outlook · 9 Sep 2026")
-    assert dests == ["Kelly FLD, TX", "Dyess AFB, TX", "McGuire AFB, NJ"], dests
-    assert board["flights"][0]["roll"] == "07:00"
-    assert board["flights"][0]["kind"] == "firm"
+    assert board["asOfLabel"].startswith("McChord outlook · 12 Sep 2026"), board["asOfLabel"]
+    assert dests == [
+        "McGuire AFB, NJ",
+        "JB Elmendorf, AK",
+        "JB Elmendorf, AK",
+        "JB Elmendorf, AK",
+    ], dests
+    assert board["flights"][0]["roll"] == "11:50"
+    assert board["flights"][0]["seats"] == "53F"
+    assert board["flights"][1]["roll"] == "07:00"
     assert board["flights"][1]["kind"] == "tbd"
-    assert board["flights"][2]["seats"] == "53F"
     print("self-test ok", len(board["flights"]), "flights")
 
 

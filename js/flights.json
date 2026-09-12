@@ -1,31 +1,9 @@
 {
-  "asOf": "2026-09-09T23:50:00-07:00",
-  "asOfLabel": "McChord outlook · 9 Sep 2026, 2350L",
+  "asOf": "2026-09-12T06:30:00-07:00",
+  "asOfLabel": "McChord outlook · 12 Sep 2026, 0630L",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
-  "fetchedAt": "2026-09-12T22:47:24Z",
+  "fetchedAt": "2026-09-12T22:51:51Z",
   "flights": [
-    {
-      "id": "tcm-0910-kelly-fld-tx-0700",
-      "origin": "tcm",
-      "date": "2026-09-10",
-      "roll": "07:00",
-      "dest": "Kelly FLD, TX",
-      "destKey": "kelly fld, tx kelly fld, tx",
-      "seats": "0F",
-      "kind": "firm",
-      "note": "0 firm seats posted"
-    },
-    {
-      "id": "tcm-0911-dyess-afb-tx-0630",
-      "origin": "tcm",
-      "date": "2026-09-11",
-      "roll": "06:30",
-      "dest": "Dyess AFB, TX",
-      "destKey": "dyess afb, tx dyess afb, tx",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished"
-    },
     {
       "id": "tcm-0912-mcguire-afb-nj-1150",
       "origin": "tcm",
@@ -36,6 +14,39 @@
       "seats": "53F",
       "kind": "firm",
       "note": "53 firm seats posted"
+    },
+    {
+      "id": "tcm-0914-jb-elmendorf-ak-0700",
+      "origin": "tcm",
+      "date": "2026-09-14",
+      "roll": "07:00",
+      "dest": "JB Elmendorf, AK",
+      "destKey": "jb elmendorf, ak jb elmendorf, ak",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished"
+    },
+    {
+      "id": "tcm-0914-jb-elmendorf-ak-0730",
+      "origin": "tcm",
+      "date": "2026-09-14",
+      "roll": "07:30",
+      "dest": "JB Elmendorf, AK",
+      "destKey": "jb elmendorf, ak jb elmendorf, ak",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished"
+    },
+    {
+      "id": "tcm-0914-jb-elmendorf-ak-1100",
+      "origin": "tcm",
+      "date": "2026-09-14",
+      "roll": "11:00",
+      "dest": "JB Elmendorf, AK",
+      "destKey": "jb elmendorf, ak jb elmendorf, ak",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished"
     }
   ]
 }

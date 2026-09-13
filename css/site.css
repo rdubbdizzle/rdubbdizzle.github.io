@@ -316,6 +316,22 @@ body::before {
 }
 .empty p { color: var(--fg-muted); margin: var(--space-3) auto 0; max-width: 42ch; }
 
+.watch-card {
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius-xl);
+  padding: 22px 24px;
+  display: grid;
+  gap: var(--space-3);
+}
+.watch-card .kicker { margin-bottom: 0; }
+.watch-card p { margin: 0; color: var(--fg-muted); max-width: 62ch; }
+.watch-card ul { margin: 0; padding-left: 1.15em; display: grid; gap: 8px; }
+.watch-card li { color: var(--fg); }
+.board-row.watch {
+  box-shadow: inset 3px 0 0 var(--tent);
+}
+
 .cta-row {
   display: flex;
   flex-wrap: wrap;

@@ -80,7 +80,7 @@
       const origin = byId(f.origin) || { name: f.origin, field: "" };
       const st = statusFor(f);
       const href = origin.local || origin.page || "jblm.html";
-      return `<a class="board-row${st === "passed" ? " past" : ""}" href="${href}">
+      return `<a class="board-row${st === "passed" ? " past" : ""}${watchIds().has(f.id) ? " watch" : ""}" href="${href}">
         <div class="time tabular">${formatHHMM(f)}</div>
         <div class="dest">
           <strong>${f.dest}</strong>
@@ -114,6 +114,56 @@
   const tgrid = document.getElementById("terminals");
   const asOf = document.getElementById("asof");
   const upcomingMount = document.getElementById("upcoming");
+  const watchMount = document.getElementById("watch");
+
+  const HAWAII_RE = /hawaii|hickam|honolulu|pearl harbor|kaneohe|jbphh/;
+  const TRAVIS_RE = /travis|fairfield|\bsuu\b|ksuu|david grant/;
+
+  function watchHits() {
+    const live = data.flights.filter((f) => statusFor(f) !== "passed");
+    const tcm = live.filter((f) => f.origin === "tcm");
+    const suu = live.filter((f) => f.origin === "suu");
+    const hits = [];
+    const ids = new Set();
+    tcm.forEach((f) => {
+      if (HAWAII_RE.test(haystack(f))) {
+        hits.push("JBLM → " + f.dest + " · " + formatRoll(f) + " · " + f.seats);
+        ids.add(f.id);
+      }
+    });
+    const feeders = tcm.filter((f) => TRAVIS_RE.test(haystack(f)));
+    suu.filter((f) => HAWAII_RE.test(haystack(f))).forEach((hop) => {
+      ids.add(hop.id);
+      const hopAt = parseRoll(hop).getTime();
+      const viable = feeders.filter((f) => hopAt - parseRoll(f).getTime() >= 6 * 3600 * 1000);
+      if (viable.length) {
+        viable.sort((a, b) => parseRoll(a) - parseRoll(b));
+        const first = viable[0];
+        ids.add(first.id);
+        hits.push("JBLM " + formatRoll(first) + " → Travis, then " + formatRoll(hop) + " Travis → " + hop.dest + " (" + hop.seats + ")");
+      } else {
+        hits.push("Travis → " + hop.dest + " · " + formatRoll(hop) + " · " + hop.seats + " — no JBLM feeder with 6h+ yet");
+      }
+    });
+    return { hits, ids };
+  }
+
+  function watchIds() {
+    return watchHits().ids;
+  }
+
+  function renderWatch() {
+    if (!watchMount) return;
+    const { hits } = watchHits();
+    watchMount.hidden = false;
+    if (!hits.length) {
+      watchMount.innerHTML = `<div class="kicker">Portland watch</div>
+        <p>Watching <strong>JBLM → Hawaii</strong> and <strong>JBLM → Travis → Hawaii</strong> (at least 6 hours between roll calls). Nothing upcoming on this board. You’ll get a GitHub email when one posts.</p>`;
+      return;
+    }
+    watchMount.innerHTML = `<div class="kicker">Portland watch · match</div>
+      <ul>${hits.map((h) => `<li>${h}</li>`).join("")}</ul>`;
+  }
 
   let region = "all";
 
@@ -154,6 +204,7 @@
     }
     if (board) renderFlights(flights, board, { upcomingOnly: false });
     if (tgrid) renderTerminals(filteredTerminals(), tgrid);
+    renderWatch();
   }
 
   function applyBoard(payload) {

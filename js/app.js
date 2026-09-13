@@ -84,7 +84,7 @@
         <div class="time tabular">${formatHHMM(f)}</div>
         <div class="dest">
           <strong>${f.dest}</strong>
-          <span>${formatRoll(f)} · ${origin.field || origin.name}</span>
+          <span>${formatRoll(f)} · ${origin.field || origin.name}${f.horizon === "30day" ? " · 30-day" : ""}</span>
         </div>
         <div class="origin-tag">${origin.icao || ""}</div>
         <div class="badge ${badgeClass(st, f.kind)}">${badgeLabel(st, f)}</div>

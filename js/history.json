@@ -1,0 +1,169 @@
+{
+  "updatedAt": "2026-09-12T17:15:00Z",
+  "rows": [
+    {
+      "id": "tcm-2026-09-12-mcguire-afb-nj-53F",
+      "origin": "tcm",
+      "date": "2026-09-12",
+      "roll": "11:50",
+      "dest": "McGuire AFB, NJ",
+      "released": "53F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-12-jb-pearl-harbor-hickam-hi-andersen-afb-guam-kade-73T",
+      "origin": "suu",
+      "date": "2026-09-12",
+      "roll": "06:40",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam / Kadena AB, Japan / Osan AB, Korea",
+      "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-12-jb-pearl-harbor-hickam-hi-patriot-express-41F",
+      "origin": "suu",
+      "date": "2026-09-12",
+      "roll": "15:35",
+      "dest": "JB Pearl Harbor-Hickam, HI (Patriot Express)",
+      "released": "41F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-12-bangor-intl-me-19T",
+      "origin": "suu",
+      "date": "2026-09-12",
+      "roll": "10:10",
+      "dest": "Bangor INTL, ME",
+      "released": "19T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-10-jb-elmendorf-richardson-ak-yokota-ab-japan-kaden-73",
+      "origin": "suu",
+      "date": "2026-09-10",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Kadena AB, Japan",
+      "released": "73",
+      "used": "1",
+      "cat": "VI",
+      "source": "rollcall"
+    },
+    {
+      "id": "suu-2026-09-09-tulsa-intl-ok-53",
+      "origin": "suu",
+      "date": "2026-09-09",
+      "dest": "Tulsa INTL, OK",
+      "released": "53",
+      "used": "0",
+      "cat": "",
+      "source": "rollcall"
+    },
+    {
+      "id": "suu-2026-09-09-jb-pearl-harbor-hickam-hi-73",
+      "origin": "suu",
+      "date": "2026-09-09",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "released": "73",
+      "used": "15",
+      "cat": "VI",
+      "source": "rollcall"
+    },
+    {
+      "id": "suu-2026-09-08-jb-pearl-harbor-hickam-hi-yokota-ab-japan-0",
+      "origin": "suu",
+      "date": "2026-09-08",
+      "dest": "JB Pearl Harbor-Hickam, HI / Yokota AB, Japan",
+      "released": "0",
+      "used": "0",
+      "cat": "",
+      "source": "rollcall"
+    },
+    {
+      "id": "suu-2026-09-05-jb-elmendorf-richardson-ak-19",
+      "origin": "suu",
+      "date": "2026-09-05",
+      "dest": "JB Elmendorf-Richardson, AK",
+      "released": "19",
+      "used": "6",
+      "cat": "VI",
+      "source": "rollcall"
+    },
+    {
+      "id": "suu-2026-09-04-pease-angb-nh-19",
+      "origin": "suu",
+      "date": "2026-09-04",
+      "dest": "Pease ANGB, NH",
+      "released": "19",
+      "used": "0",
+      "cat": "",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-07-28-travis-afb-ca-53F",
+      "origin": "tcm",
+      "date": "2026-07-28",
+      "dest": "Travis AFB, CA",
+      "released": "53F",
+      "used": "6",
+      "cat": "III",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-07-27-whiteman-afb-mo-40F",
+      "origin": "tcm",
+      "date": "2026-07-27",
+      "dest": "Whiteman AFB, MO",
+      "released": "40F",
+      "used": "3",
+      "cat": "VI",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-07-27-osan-ab-korea-53F",
+      "origin": "tcm",
+      "date": "2026-07-27",
+      "dest": "Osan AB, Korea",
+      "released": "53F",
+      "used": "3",
+      "cat": "III",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-07-27-elmendorf-afb-ak-53F",
+      "origin": "tcm",
+      "date": "2026-07-27",
+      "dest": "Elmendorf AFB, AK",
+      "released": "53F",
+      "used": "3",
+      "cat": "III",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-07-27-andrews-afb-md-62F",
+      "origin": "tcm",
+      "date": "2026-07-27",
+      "dest": "Andrews AFB, MD",
+      "released": "62F",
+      "used": "4",
+      "cat": "VI",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-07-26-elmendorf-afb-ak-53F",
+      "origin": "tcm",
+      "date": "2026-07-26",
+      "dest": "Elmendorf AFB, AK",
+      "released": "53F",
+      "used": "3",
+      "cat": "VI",
+      "source": "rollcall"
+    }
+  ]
+}

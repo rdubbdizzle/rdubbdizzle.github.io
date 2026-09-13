@@ -157,7 +157,7 @@ def month_num(name: str) -> int:
     return MONTHS.get(name) or MONTHS[name[:3]]
 
 
-def parse_outlook(text: str, origin: str, label_name: str, source_url: str) -> dict:
+def parse_outlook(text: str, origin: str, label_name: str, source_url: str, horizon: str = "72hr") -> dict:
     text = text.replace("\u00a0", " ")
     asof_m = ASOF_RE.search(text)
     day_matches = list(DAY_RE.finditer(text))
@@ -203,6 +203,7 @@ def parse_outlook(text: str, origin: str, label_name: str, source_url: str) -> d
                 "seats": seats,
                 "kind": kind_for(seats),
                 "note": note_for(seats, kind_for(seats)),
+                "horizon": horizon,
             })
     return {
         "asOf": as_of_iso,
@@ -280,16 +281,47 @@ def fetch_travis_pdf() -> tuple[bytes, str]:
     raise RuntimeError(f"No recent Travis 72-hour PDF found ({last_err})")
 
 
+def travis_30day_urls(days: int = 2) -> list[str]:
+    now = datetime.now(PACIFIC)
+    urls = [TRAVIS_DIR + "TRAVIS_30DAY.pdf"]
+    for i in range(days):
+        d = now - timedelta(days=i)
+        stamp = f"{d.day:02d}{MONTH_ABBR[d.month - 1]}{str(d.year)[2:]}"
+        urls.append(TRAVIS_DIR + f"TRAVIS_30DAY_{stamp}.pdf")
+    return urls
+
+
+def fetch_travis_30day() -> tuple[bytes, str]:
+    last_err: Exception | None = None
+    for url in travis_30day_urls():
+        try:
+            data = fetch_pdf_bytes(url)
+            return data, url
+        except Exception as exc:
+            last_err = exc
+            continue
+    raise RuntimeError(f"No Travis 30-day PDF found ({last_err})")
+
+
 def merge_boards(boards: list[dict]) -> dict:
-    flights = []
+    seen: dict[tuple, dict] = {}
+    keys: list[tuple] = []
     labels = []
     sources = []
     as_ofs = []
     for board in boards:
-        flights.extend(board["flights"])
         labels.append(board["asOfLabel"])
         sources.append({"origin": board["origin"], "url": board["sourceUrl"], "asOfLabel": board["asOfLabel"]})
         as_ofs.append(board["asOf"])
+        for f in board["flights"]:
+            key = (f["origin"], f["date"], f["roll"])
+            prev = seen.get(key)
+            if prev and prev.get("horizon") == "72hr" and f.get("horizon") == "30day":
+                continue
+            if key not in seen:
+                keys.append(key)
+            seen[key] = f
+    flights = [seen[k] for k in keys]
     flights.sort(key=lambda f: (f["date"], f["roll"], f["origin"]))
     return {
         "asOf": max(as_ofs) if as_ofs else "",
@@ -356,8 +388,8 @@ def self_test() -> None:
     print("self-test ok", "tcm", len(tcm["flights"]), "travis", len(travis["flights"]))
 
 
-def load_terminal(origin: str, label: str, url: str, text: str) -> dict:
-    board = parse_outlook(text, origin=origin, label_name=label, source_url=url)
+def load_terminal(origin: str, label: str, url: str, text: str, horizon: str = "72hr") -> dict:
+    board = parse_outlook(text, origin=origin, label_name=label, source_url=url, horizon=horizon)
     print(f"{label}: {len(board['flights'])} flights · {board['asOfLabel']}")
     return board
 
@@ -404,6 +436,18 @@ def main() -> int:
         except Exception as exc:
             errors.append(f"Travis: {exc}")
             print(f"Travis failed: {exc}", file=sys.stderr)
+
+        try:
+            data, url = fetch_travis_30day()
+            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+                tmp_path = Path(tmp.name)
+                tmp_path.write_bytes(data)
+            try:
+                boards.append(load_terminal("suu", "Travis 30-day", url, pdf_text(tmp_path), horizon="30day"))
+            finally:
+                tmp_path.unlink(missing_ok=True)
+        except Exception as exc:
+            print(f"Travis 30-day skipped: {exc}", file=sys.stderr)
 
         if not boards:
             raise RuntimeError("No terminals updated (" + "; ".join(errors) + ")")

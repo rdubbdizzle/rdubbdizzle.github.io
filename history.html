@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>McChord roll-call history — SpaceAFinder</title>
-  <meta name="description" content="Recent McChord Field Space-A roll-call results: destinations, seats released, and lowest category boarded." />
+  <title>Roll-call history — SpaceAFinder</title>
+  <meta name="description" content="Historical Space-A roll calls from McChord and Travis: destinations, seats released, seats used, and lowest category boarded." />
   <meta name="theme-color" content="#090b10" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,46 +25,75 @@
       <a href="index.html">Flights</a>
       <a href="jblm.html">McChord</a>
       <a href="travis.html">Travis</a>
+      <a class="active" href="history.html">History</a>
       <a href="guide.html">How it works</a>
       <a class="pong-link" href="pong.html">Terminal Pong</a>
     </nav>
   </header>
 
   <div class="page-hero">
-    <a class="crumb" href="jblm.html">← McChord</a>
-    <div class="kicker">24-hour roll-call report</div>
-    <h1>Where McChord has been going</h1>
-    <p class="lede" style="color:var(--fg-muted);margin-top:12px">From the public McChord roll-call PDF current as of 28 Jul 2026. Lowest category boarded tells you whether retirees had a shot that day.</p>
+    <a class="crumb" href="index.html">← Flights</a>
+    <div class="kicker">Growing archive</div>
+    <h1>Roll-call history</h1>
+    <p class="lede" style="color:var(--fg-muted);margin-top:12px">Seats released vs seats used, kept after the 24-hour PDFs roll off. Category VI making it means retirees had a shot that day.</p>
   </div>
 
   <section class="section">
+    <div class="chips" id="hchips">
+      <button type="button" class="chip active" data-origin="all">All</button>
+      <button type="button" class="chip" data-origin="tcm">McChord</button>
+      <button type="button" class="chip" data-origin="suu">Travis</button>
+    </div>
+    <div class="meta" id="hasof" style="margin:12px 0"></div>
     <table class="cat-table">
       <thead>
-        <tr><th>Date</th><th>Destination</th><th>Released</th><th>Used</th><th>Lowest cat</th></tr>
+        <tr><th>Date</th><th>From</th><th>Destination</th><th>Released</th><th>Used</th><th>Lowest cat</th></tr>
       </thead>
-      <tbody>
-        <tr><td>28 Jul</td><td>Travis AFB, CA</td><td>53F</td><td>6</td><td>III</td></tr>
-        <tr><td>27 Jul</td><td>Osan AB, Korea</td><td>53F</td><td>3</td><td>III</td></tr>
-        <tr><td>27 Jul</td><td>Elmendorf AFB, AK</td><td>53F</td><td>3</td><td>III</td></tr>
-        <tr><td>27 Jul</td><td>Andrews AFB, MD</td><td>62F</td><td>4</td><td>VI</td></tr>
-        <tr><td>27 Jul</td><td>Whiteman AFB, MO</td><td>40F</td><td>3</td><td>VI</td></tr>
-        <tr><td>27 Jul</td><td>Travis AFB, CA</td><td>53F</td><td>0</td><td>—</td></tr>
-        <tr><td>26 Jul</td><td>Elmendorf AFB, AK</td><td>53F</td><td>3</td><td>VI</td></tr>
-        <tr><td>26 Jul</td><td>Osan AB, Korea</td><td>53F</td><td>0</td><td>—</td></tr>
-        <tr><td>26 Jul</td><td>Hill AFB, UT</td><td>53F / 52F / 53F</td><td>0</td><td>—</td></tr>
-      </tbody>
+      <tbody id="hbody"></tbody>
     </table>
-    <div class="cta-row" style="justify-content:flex-start">
-      <a class="btn btn-ghost" href="https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM_RollCall.pdf">Official roll-call PDF</a>
-    </div>
   </section>
 
   <footer class="site-footer">
     <div class="inner">
       <p>History is a hint, not a promise. Routes and categories swing with the airlift tasking.</p>
-      <p><a href="schedule.html">Current 72-hour</a></p>
     </div>
   </footer>
 </div>
+<script>
+fetch("js/history.json", { cache: "no-store" })
+  .then((r) => r.json())
+  .then((data) => {
+    const names = { tcm: "McChord", suu: "Travis" };
+    const body = document.getElementById("hbody");
+    const asof = document.getElementById("hasof");
+    let origin = "all";
+    const rows = data.rows || [];
+    asof.textContent = rows.length + " recorded roll calls" + (data.updatedAt ? " · updated " + data.updatedAt.slice(0, 10) : "");
+    function paint() {
+      const show = rows.filter((r) => origin === "all" || r.origin === origin);
+      body.innerHTML = show.map((r) =>
+        `<tr>
+          <td>${r.date}</td>
+          <td>${names[r.origin] || r.origin}</td>
+          <td>${r.dest}</td>
+          <td>${r.released || "—"}</td>
+          <td>${r.used || "—"}</td>
+          <td>${r.cat || "—"}</td>
+        </tr>`
+      ).join("") || `<tr><td colspan="6">No history for that terminal yet.</td></tr>`;
+    }
+    document.getElementById("hchips").addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-origin]");
+      if (!btn) return;
+      origin = btn.getAttribute("data-origin");
+      document.querySelectorAll("#hchips .chip").forEach((c) => c.classList.toggle("active", c === btn));
+      paint();
+    });
+    paint();
+  })
+  .catch(() => {
+    document.getElementById("hbody").innerHTML = "<tr><td colspan='6'>History file not loaded.</td></tr>";
+  });
+</script>
 </body>
 </html>

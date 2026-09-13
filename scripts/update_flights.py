@@ -129,6 +129,7 @@ def pretty_dest(raw: str) -> str:
     out = " ".join(parts).replace(" ,", ",")
     out = re.sub(r"\bMguire\b", "McGuire", out, flags=re.I)
     out = re.sub(r"\bMcchord\b", "McChord", out, flags=re.I)
+    out = re.sub(r"\bTra Vis\b", "Travis", out, flags=re.I)
     out = STOP_SPLIT.sub(r"\1 / ", out)
     out = re.sub(r"\s*/\s*", " / ", out)
     return out.strip(" /")
@@ -437,6 +438,18 @@ def merge_boards(boards: list[dict]) -> dict:
     }
 
 
+def asof_fresh(as_of: str, days: int = 5) -> bool:
+    if not as_of:
+        return False
+    try:
+        dt = datetime.fromisoformat(as_of)
+    except ValueError:
+        return False
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=PACIFIC)
+    return datetime.now(PACIFIC) - dt.astimezone(PACIFIC) <= timedelta(days=days)
+
+
 def keep_previous(boards: list[dict], origin: str, label: str) -> None:
     if any(b.get("origin") == origin and b.get("horizon") != "30day" for b in boards):
         return
@@ -575,7 +588,12 @@ def main() -> int:
         errors: list[str] = []
         try:
             data = fetch_pdf_bytes(TCM_PDF, save=True, max_age_days=7)
-            boards.append(load_from_bytes("tcm", "McChord", TCM_PDF, data))
+            board = load_from_bytes("tcm", "McChord", TCM_PDF, data)
+            if not asof_fresh(board.get("asOf", "")):
+                print(f"McChord snapshot stale ({board.get('asOfLabel')})", file=sys.stderr)
+                keep_previous(boards, "tcm", "McChord")
+            else:
+                boards.append(board)
         except Exception as exc:
             errors.append(f"McChord: {exc}")
             print(f"McChord failed: {exc}", file=sys.stderr)
@@ -583,7 +601,12 @@ def main() -> int:
 
         try:
             data, url = fetch_travis_pdf()
-            boards.append(load_from_bytes("suu", "Travis", url, data))
+            board = load_from_bytes("suu", "Travis", url, data)
+            if not asof_fresh(board.get("asOf", ""), days=3):
+                print(f"Travis snapshot stale ({board.get('asOfLabel')})", file=sys.stderr)
+                keep_previous(boards, "suu", "Travis")
+            else:
+                boards.append(board)
         except Exception as exc:
             errors.append(f"Travis: {exc}")
             print(f"Travis failed: {exc}", file=sys.stderr)

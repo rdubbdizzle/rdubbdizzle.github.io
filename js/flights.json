@@ -1,12 +1,12 @@
 {
-  "asOf": "2026-09-12T06:00:00-07:00",
-  "asOfLabel": "McChord · 31 Aug 2026, 2100L  ·  Travis · 12 Sep 2026  ·  Travis PE · Sep 2026",
+  "asOf": "2026-09-12T06:30:00-07:00",
+  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 12 Sep 2026  ·  Travis PE · Sep 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
       "origin": "tcm",
       "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
-      "asOfLabel": "McChord · 31 Aug 2026, 2100L",
+      "asOfLabel": "McChord · 12 Sep 2026, 0630L",
       "horizon": "72hr"
     },
     {
@@ -22,56 +22,8 @@
       "horizon": "30day"
     }
   ],
-  "fetchedAt": "2026-09-13T00:36:00Z",
+  "fetchedAt": "2026-09-13T00:34:57Z",
   "flights": [
-    {
-      "id": "tcm-0831-charleston-afb-sc-1405",
-      "origin": "tcm",
-      "date": "2026-08-31",
-      "roll": "14:05",
-      "dest": "Charleston AFB, SC",
-      "destKey": "charleston afb, sc charleston afb, sc",
-      "seats": "53F",
-      "kind": "firm",
-      "note": "53 firm seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-0902-tra-vis-afb-ca-0710",
-      "origin": "tcm",
-      "date": "2026-09-02",
-      "roll": "07:10",
-      "dest": "Tra Vis AFB, CA",
-      "destKey": "tra vis afb, ca tra vis afb, ca",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-0902-mcguire-afb-nj-1150",
-      "origin": "tcm",
-      "date": "2026-09-02",
-      "roll": "11:50",
-      "dest": "McGuire AFB, NJ",
-      "destKey": "mcguire afb, nj mguire afb, nj",
-      "seats": "53F",
-      "kind": "firm",
-      "note": "53 firm seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-0902-tra-vis-afb-ca-1345",
-      "origin": "tcm",
-      "date": "2026-09-02",
-      "roll": "13:45",
-      "dest": "Tra Vis AFB, CA",
-      "destKey": "tra vis afb, ca tra vis afb, ca",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "72hr"
-    },
     {
       "id": "suu-0912-jb-pearl-harbor-hickam-hi-andersen-afb-guam-kade-0640",
       "origin": "suu",
@@ -94,6 +46,18 @@
       "seats": "19T",
       "kind": "tent",
       "note": "19 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-0912-mcguire-afb-nj-1150",
+      "origin": "tcm",
+      "date": "2026-09-12",
+      "roll": "11:50",
+      "dest": "McGuire AFB, NJ",
+      "destKey": "mcguire afb, nj mguire afb, nj",
+      "seats": "53F",
+      "kind": "firm",
+      "note": "53 firm seats posted",
       "horizon": "72hr"
     },
     {
@@ -142,6 +106,42 @@
       "seats": "19T",
       "kind": "tent",
       "note": "19 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-0914-jb-elmendorf-ak-0700",
+      "origin": "tcm",
+      "date": "2026-09-14",
+      "roll": "07:00",
+      "dest": "JB Elmendorf, AK",
+      "destKey": "jb elmendorf, ak jb elmendorf, ak",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-0914-jb-elmendorf-ak-0730",
+      "origin": "tcm",
+      "date": "2026-09-14",
+      "roll": "07:30",
+      "dest": "JB Elmendorf, AK",
+      "destKey": "jb elmendorf, ak jb elmendorf, ak",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-0914-jb-elmendorf-ak-1100",
+      "origin": "tcm",
+      "date": "2026-09-14",
+      "roll": "11:00",
+      "dest": "JB Elmendorf, AK",
+      "destKey": "jb elmendorf, ak jb elmendorf, ak",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
       "horizon": "72hr"
     },
     {

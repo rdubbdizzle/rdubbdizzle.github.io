@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T00:38:41Z",
+  "updatedAt": "2026-09-13T07:13:08Z",
   "rows": [
     {
       "id": "tcm-2026-09-12-mcguire-afb-nj-53F",
@@ -46,6 +46,16 @@
       "source": "72hr"
     },
     {
+      "id": "tcm-2026-09-11-dyess-afb-tx-53",
+      "origin": "tcm",
+      "date": "2026-09-11",
+      "dest": "Dyess AFB, TX",
+      "released": "53",
+      "used": "0",
+      "cat": "",
+      "source": "rollcall"
+    },
+    {
       "id": "suu-2026-09-10-jb-elmendorf-richardson-ak-yokota-ab-japan-kaden-73",
       "origin": "suu",
       "date": "2026-09-10",
@@ -53,6 +63,16 @@
       "released": "73",
       "used": "1",
       "cat": "VI",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-09-09-eielson-afb-ak-53",
+      "origin": "tcm",
+      "date": "2026-09-09",
+      "dest": "Eielson AFB, AK",
+      "released": "53",
+      "used": "0",
+      "cat": "",
       "source": "rollcall"
     },
     {
@@ -76,6 +96,16 @@
       "source": "rollcall"
     },
     {
+      "id": "tcm-2026-09-08-tulsa-intl-ok-53",
+      "origin": "tcm",
+      "date": "2026-09-08",
+      "dest": "Tulsa INTL, OK",
+      "released": "53",
+      "used": "6",
+      "cat": "VI",
+      "source": "rollcall"
+    },
+    {
       "id": "suu-2026-09-08-jb-pearl-harbor-hickam-hi-yokota-ab-japan-0",
       "origin": "suu",
       "date": "2026-09-08",
@@ -83,6 +113,16 @@
       "released": "0",
       "used": "0",
       "cat": "",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-09-05-dover-afb-nj-53",
+      "origin": "tcm",
+      "date": "2026-09-05",
+      "dest": "Dover AFB, NJ",
+      "released": "53",
+      "used": "2",
+      "cat": "VI",
       "source": "rollcall"
     },
     {

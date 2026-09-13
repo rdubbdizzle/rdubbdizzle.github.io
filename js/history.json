@@ -1,6 +1,28 @@
 {
-  "updatedAt": "2026-09-13T07:13:08Z",
+  "updatedAt": "2026-09-13T17:25:04Z",
   "rows": [
+    {
+      "id": "suu-2026-09-13-jb-elmendorf-richardson-ak-yokota-ab-japan-53T",
+      "origin": "suu",
+      "date": "2026-09-13",
+      "roll": "04:40",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-13-bangor-intl-me-19T",
+      "origin": "suu",
+      "date": "2026-09-13",
+      "roll": "09:40",
+      "dest": "Bangor INTL, ME",
+      "released": "19T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "tcm-2026-09-12-mcguire-afb-nj-53F",
       "origin": "tcm",

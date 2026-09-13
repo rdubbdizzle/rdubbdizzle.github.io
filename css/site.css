@@ -557,6 +557,7 @@ body::before {
   font-size: var(--text-xs);
 }
 .cat-table td:first-child { font-family: var(--font-mono); color: var(--fg); }
+.cat-table td.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
 
 .site-footer {
   border-top: 1px solid var(--border);

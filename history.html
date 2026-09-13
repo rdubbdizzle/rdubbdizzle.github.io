@@ -35,7 +35,7 @@
     <a class="crumb" href="index.html">← Flights</a>
     <div class="kicker">Growing archive</div>
     <h1>Roll-call history</h1>
-    <p class="lede" style="color:var(--fg-muted);margin-top:12px">Seats released vs seats used, kept after the 24-hour PDFs roll off. Category VI making it means retirees had a shot that day.</p>
+    <p class="lede" style="color:var(--fg-muted);margin-top:12px">Seats released vs seats used, kept after the 24-hour PDFs roll off. Category VI making it means retirees had a shot that day. Each daily pull adds to this list — it does not replace it.</p>
   </div>
 
   <section class="section">
@@ -43,11 +43,12 @@
       <button type="button" class="chip active" data-origin="all">All</button>
       <button type="button" class="chip" data-origin="tcm">McChord</button>
       <button type="button" class="chip" data-origin="suu">Travis</button>
+      <button type="button" class="chip" data-origin="hawaii">Hawaii</button>
     </div>
     <div class="meta" id="hasof" style="margin:12px 0"></div>
     <table class="cat-table">
       <thead>
-        <tr><th>Date</th><th>From</th><th>Destination</th><th>Released</th><th>Used</th><th>Lowest cat</th></tr>
+        <tr><th>Date</th><th>From</th><th>Destination</th><th>Released</th><th>Used</th><th>Fill</th><th>Lowest cat</th></tr>
       </thead>
       <tbody id="hbody"></tbody>
     </table>
@@ -55,7 +56,7 @@
 
   <footer class="site-footer">
     <div class="inner">
-      <p>History is a hint, not a promise. Routes and categories swing with the airlift tasking.</p>
+      <p>Official roll-call PDFs overwrite used/category when they land. Outlook-only rows stay until that happens. History is a hint, not a promise.</p>
     </div>
   </footer>
 </div>
@@ -64,23 +65,44 @@ fetch("js/history.json", { cache: "no-store" })
   .then((r) => r.json())
   .then((data) => {
     const names = { tcm: "McChord", suu: "Travis" };
+    const HI = /hawaii|hickam|honolulu|pearl harbor/;
     const body = document.getElementById("hbody");
     const asof = document.getElementById("hasof");
     let origin = "all";
     const rows = data.rows || [];
-    asof.textContent = rows.length + " recorded roll calls" + (data.updatedAt ? " · updated " + data.updatedAt.slice(0, 10) : "");
+    const roll = rows.filter((r) => r.source === "rollcall").length;
+    asof.textContent = rows.length + " recorded flights · " + roll + " with official used/cat" +
+      (data.updatedAt ? " · updated " + data.updatedAt.slice(0, 10) : "");
+    function prettyDate(iso) {
+      const [y, m, d] = (iso || "").split("-").map(Number);
+      if (!y) return iso || "";
+      return new Date(Date.UTC(y, m - 1, d)).toLocaleDateString("en-US", {
+        weekday: "short", month: "short", day: "numeric", timeZone: "UTC"
+      });
+    }
+    function fillOf(r) {
+      const rel = parseInt(String(r.released || "").replace(/[^\d]/g, ""), 10);
+      const used = parseInt(String(r.used || ""), 10);
+      if (!rel || Number.isNaN(used)) return "—";
+      return Math.round((used / rel) * 100) + "%";
+    }
     function paint() {
-      const show = rows.filter((r) => origin === "all" || r.origin === origin);
+      const show = rows.filter((r) => {
+        if (origin === "all") return true;
+        if (origin === "hawaii") return HI.test((r.dest || "").toLowerCase());
+        return r.origin === origin;
+      });
       body.innerHTML = show.map((r) =>
         `<tr>
-          <td>${r.date}</td>
+          <td>${prettyDate(r.date)}</td>
           <td>${names[r.origin] || r.origin}</td>
           <td>${r.dest}</td>
-          <td>${r.released || "—"}</td>
-          <td>${r.used || "—"}</td>
+          <td class="num">${r.released || "—"}</td>
+          <td class="num">${r.used || "—"}</td>
+          <td class="num">${fillOf(r)}</td>
           <td>${r.cat || "—"}</td>
         </tr>`
-      ).join("") || `<tr><td colspan="6">No history for that terminal yet.</td></tr>`;
+      ).join("") || `<tr><td colspan="7">No history for that filter yet.</td></tr>`;
     }
     document.getElementById("hchips").addEventListener("click", (e) => {
       const btn = e.target.closest("[data-origin]");
@@ -92,7 +114,7 @@ fetch("js/history.json", { cache: "no-store" })
     paint();
   })
   .catch(() => {
-    document.getElementById("hbody").innerHTML = "<tr><td colspan='6'>History file not loaded.</td></tr>";
+    document.getElementById("hbody").innerHTML = "<tr><td colspan='7'>History file not loaded.</td></tr>";
   });
 </script>
 </body>

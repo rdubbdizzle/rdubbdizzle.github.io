@@ -12,7 +12,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from update_flights import (
+from update_flights import (  # noqa: E402
     MONTH_ABBR,
     PACIFIC,
     TRAVIS_DIR,
@@ -71,8 +71,6 @@ def parse_rollcall(text: str, origin: str) -> list[dict]:
             released, used, cat = sm.group(1), sm.group(2), sm.group(3).upper()
             if cat == "-":
                 cat = ""
-            else:
-                cat = cat.upper()
             rows.append({
                 "id": f"{origin}-{date}-{slug(dest_raw)}-{released}",
                 "origin": origin,
@@ -91,7 +89,7 @@ def archive_passed_board(flights: list[dict], now: datetime | None = None) -> li
     rows = []
     for f in flights:
         y, mo, d = map(int, f["date"].split("-"))
-        hh, mm = map(int, f["roll"].split(":"))
+        hh, mm = map(int, (f.get("roll") or "00:00").split(":"))
         when = datetime(y, mo, d, hh, mm, tzinfo=PACIFIC)
         if when > now:
             continue
@@ -116,7 +114,6 @@ def merge_history(existing: list[dict], incoming: list[dict]) -> list[dict]:
         if not old:
             by_id[row["id"]] = row
             continue
-        # Official roll-call wins on used/cat; keep earlier dest spelling if needed.
         if row.get("source") == "rollcall" or (row.get("used") and not old.get("used")):
             merged = {**old, **{k: v for k, v in row.items() if v}}
             by_id[row["id"]] = merged
@@ -126,7 +123,7 @@ def merge_history(existing: list[dict], incoming: list[dict]) -> list[dict]:
     return rows
 
 
-def travis_rollcall_urls(days: int = 10) -> list[str]:
+def travis_rollcall_urls(days: int = 4) -> list[str]:
     now = datetime.now(PACIFIC)
     urls = []
     for i in range(days):
@@ -162,9 +159,9 @@ def self_test() -> None:
     print("roll_history self-test ok", len(rows), "rows")
 
 
-def fetch_one(url: str) -> str | None:
+def fetch_one(url: str, save: bool = False) -> str | None:
     try:
-        data = fetch_pdf_bytes(url)
+        data = fetch_pdf_bytes(url, save=save, max_age_days=14)
     except Exception as exc:
         print(f"skip {url.rsplit('/', 1)[-1]}: {exc}")
         return None
@@ -194,19 +191,20 @@ def main() -> int:
         board = json.loads(board_path.read_text())
         incoming.extend(archive_passed_board(board.get("flights") or []))
 
-    tcm_text = fetch_one(TCM_ROLL)
+    tcm_text = fetch_one(TCM_ROLL, save=True)
     if tcm_text:
-        incoming.extend(parse_rollcall(tcm_text, "tcm"))
-        print("McChord roll-call rows", len(parse_rollcall(tcm_text, "tcm")))
+        rows = parse_rollcall(tcm_text, "tcm")
+        incoming.extend(rows)
+        print("McChord roll-call rows", len(rows))
 
-    for url in travis_rollcall_urls():
-        text = fetch_one(url)
+    for i, url in enumerate(travis_rollcall_urls()):
+        text = fetch_one(url, save=(i == 0))
         if not text:
             continue
         rows = parse_rollcall(text, "suu")
         print(f"Travis roll-call {url.rsplit('/', 1)[-1]} rows={len(rows)}")
         incoming.extend(rows)
-        break  # newest dated file that exists is enough (it already holds ~7 days)
+        break
 
     merged = merge_history(existing, incoming)
     payload = {

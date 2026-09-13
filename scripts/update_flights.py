@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Pull official 72-hour PDFs and write js/flights.json."""
+"""Pull official 72-hour and Travis 30-day PDFs and write js/flights.json."""
 
 from __future__ import annotations
 
@@ -8,8 +8,10 @@ import json
 import re
 import sys
 import tempfile
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import quote
 from urllib.request import Request, urlopen
 from zoneinfo import ZoneInfo
 
@@ -69,6 +71,20 @@ STOP_SPLIT = re.compile(
     r"(,\s*(?:[A-Z]{2}|Guam|Japan|Korea|Germany|Italy|UK|England))\s+(?=[A-Z])",
     re.I,
 )
+HEADER_YEAR_RE = re.compile(
+    r"\b(JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|"
+    r"OCTOBER|NOVEMBER|DECEMBER)\s+(20\d{2})\b",
+    re.I,
+)
+PE_ROW_RE = re.compile(
+    r"([A-Z][A-Z0-9 .,'/&()*-]{2,80}?),\s*"
+    r"([A-Z]{2}|GUAM|JAPAN|KOREA|GERMANY|ITALY|ENGLAND|UK)"
+    r"\s*(\d{1,2})\s+"
+    r"(JAN(?:UARY)?|FEB(?:RUARY)?|MAR(?:CH)?|APR(?:IL)?|MAY|JUN(?:E)?|"
+    r"JUL(?:Y)?|AUG(?:UST)?|SEP(?:T|TEMBER)?|OCT(?:OBER)?|NOV(?:EMBER)?|DEC(?:EMBER)?)"
+    r"\s*/\s*(\d{3,4})\s*L",
+    re.I,
+)
 KEEP_UPPER = {
     "AFB", "AB", "NAS", "MCAS", "INTL", "JB", "JRB", "ANGB", "ARB", "FLD", "FIELD",
     "TX", "WA", "OR", "CA", "AK", "HI", "AZ", "NM", "OK", "KS", "MO", "AR",
@@ -83,9 +99,12 @@ HEADERS = {
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
         "(KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
     ),
-    "Accept": "application/pdf,application/octet-stream,*/*;q=0.8",
+    "Accept": "application/pdf,application/json,application/octet-stream,*/*;q=0.8",
     "Referer": TRAVIS_PAGE,
 }
+
+_SAVES = 0
+MAX_SAVES = 3
 
 
 def slug(text: str) -> str:
@@ -101,7 +120,6 @@ def pretty_dest(raw: str) -> str:
         if word == ",":
             parts.append(",")
         elif up in KEEP_UPPER:
-            wrapped = f"({word[1:-1].upper()})" if word.startswith("(") and word.endswith(")") else word.upper() if word.isupper() or word.upper() in KEEP_UPPER else word
             if word.startswith("(") and word.endswith(")"):
                 parts.append(f"({up})")
             else:
@@ -157,6 +175,22 @@ def month_num(name: str) -> int:
     return MONTHS.get(name) or MONTHS[name[:3]]
 
 
+def flight_row(origin: str, date: str, roll_raw: str, dest: str, dest_raw: str, seats: str, horizon: str) -> dict:
+    seats = seats.upper()
+    return {
+        "id": f"{origin}-{date[5:7]}{date[8:10]}-{slug(dest)}-{roll_raw.zfill(4)}",
+        "origin": origin,
+        "date": date,
+        "roll": hhmm(roll_raw),
+        "dest": dest,
+        "destKey": dest_key(dest + " " + dest_raw),
+        "seats": seats,
+        "kind": kind_for(seats),
+        "note": note_for(seats, kind_for(seats)),
+        "horizon": horizon,
+    }
+
+
 def parse_outlook(text: str, origin: str, label_name: str, source_url: str, horizon: str = "72hr") -> dict:
     text = text.replace("\u00a0", " ")
     asof_m = ASOF_RE.search(text)
@@ -191,25 +225,47 @@ def parse_outlook(text: str, origin: str, label_name: str, source_url: str, hori
             dest = pretty_dest(dest_raw)
             if len(dest) < 4:
                 continue
-            roll = hhmm(roll_raw)
-            mmdd = date[5:7] + date[8:10]
-            flights.append({
-                "id": f"{origin}-{mmdd}-{slug(dest)}-{roll_raw.zfill(4)}",
-                "origin": origin,
-                "date": date,
-                "roll": roll,
-                "dest": dest,
-                "destKey": dest_key(dest + " " + dest_raw),
-                "seats": seats,
-                "kind": kind_for(seats),
-                "note": note_for(seats, kind_for(seats)),
-                "horizon": horizon,
-            })
+            flights.append(flight_row(origin, date, roll_raw, dest, dest_raw, seats, horizon))
     return {
         "asOf": as_of_iso,
         "asOfLabel": as_of_label,
         "sourceUrl": source_url,
         "origin": origin,
+        "horizon": horizon,
+        "fetchedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "flights": flights,
+    }
+
+
+def parse_30day(text: str, origin: str, label_name: str, source_url: str) -> dict:
+    """Monthly Patriot Express calendar: 'HICKAM, HI12 SEPT / 1535L'."""
+    flat = re.sub(r"[ \t]*\n[ \t]*", " ", text.replace("\u00a0", " "))
+    hm = HEADER_YEAR_RE.search(flat)
+    if not hm:
+        raise ValueError(f"Could not find month/year on the {label_name} 30-day PDF")
+    header_month = month_num(hm.group(1))
+    header_year = int(hm.group(2))
+    as_of_label = f"{label_name} · {hm.group(1).title()[:3]} {header_year}"
+    as_of_iso = datetime(header_year, header_month, 1, 8, 0).isoformat() + "-07:00"
+    flights = []
+    for m in PE_ROW_RE.finditer(flat):
+        dest_raw = f"{m.group(1).strip()}, {m.group(2).strip()}"
+        if "hickam" in dest_raw.lower() and "patriot" not in dest_raw.lower():
+            dest_raw = dest_raw + " (Patriot Express)"
+        d = int(m.group(3))
+        mo = month_num(m.group(4))
+        y = header_year + 1 if mo < header_month else header_year
+        date = f"{y:04d}-{mo:02d}-{d:02d}"
+        dest = pretty_dest(dest_raw)
+        flights.append(flight_row(origin, date, m.group(5), dest, dest_raw, "TBD", "30day"))
+    if not flights:
+        raise ValueError(f"No Patriot Express rows on the {label_name} 30-day PDF")
+    return {
+        "asOf": as_of_iso,
+        "asOfLabel": as_of_label,
+        "sourceUrl": source_url,
+        "origin": origin,
+        "horizon": "30day",
         "fetchedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "flights": flights,
     }
@@ -227,10 +283,50 @@ def fetch_url(url: str, timeout: int = 60) -> tuple[bytes, str]:
         return resp.read(), resp.geturl()
 
 
-def fetch_pdf_bytes(url: str) -> bytes:
+def wayback_existing(url: str, max_age_days: int = 21) -> bytes | None:
+    api = "https://archive.org/wayback/available?url=" + quote(url, safe="")
+    data, _ = fetch_url(api, timeout=25)
+    info = json.loads(data.decode("utf-8", "replace"))
+    snap = (info.get("archived_snapshots") or {}).get("closest") or {}
+    if not snap.get("available") or not snap.get("timestamp"):
+        return None
+    ts = snap["timestamp"]
+    try:
+        when = datetime.strptime(ts[:14], "%Y%m%d%H%M%S")
+    except ValueError:
+        return None
+    if datetime.utcnow() - when > timedelta(days=max_age_days):
+        return None
+    raw = f"https://web.archive.org/web/{ts}id_/{url.split('?')[0]}"
+    blob, _ = fetch_url(raw, timeout=60)
+    return blob if blob.startswith(b"%PDF") else None
+
+
+def wayback_save(url: str) -> bytes | None:
+    global _SAVES
+    if _SAVES >= MAX_SAVES:
+        raise RuntimeError("wayback save budget exhausted")
+    _SAVES += 1
+    time.sleep(1.0)
+    data, final = fetch_url("https://web.archive.org/save/" + url, timeout=90)
+    stamp = None
+    m = re.search(r"/web/(\d{14})/", final)
+    if m:
+        stamp = m.group(1)
+    if not stamp:
+        m = re.search(r"/web/(\d{14})/", data.decode("utf-8", "replace"))
+        if m:
+            stamp = m.group(1)
+    if stamp:
+        raw_url = f"https://web.archive.org/web/{stamp}id_/{url.split('?')[0]}"
+        data, _ = fetch_url(raw_url, timeout=60)
+    return data if data.startswith(b"%PDF") else None
+
+
+def fetch_pdf_bytes(url: str, save: bool = True, max_age_days: int = 21) -> bytes:
     errors: list[str] = []
     try:
-        data, _ = fetch_url(url, timeout=45)
+        data, _ = fetch_url(url, timeout=30)
         if data.startswith(b"%PDF"):
             return data
         errors.append("direct: not a PDF")
@@ -238,69 +334,72 @@ def fetch_pdf_bytes(url: str) -> bytes:
         errors.append(f"direct: {exc}")
 
     try:
-        data, final = fetch_url("https://web.archive.org/save/" + url, timeout=90)
-        stamp = None
-        m = re.search(r"/web/(\d{14})/", final)
-        if m:
-            stamp = m.group(1)
-        if not stamp:
-            m = re.search(r"/web/(\d{14})/", data.decode("utf-8", "replace"))
-            if m:
-                stamp = m.group(1)
-        if stamp:
-            raw_url = f"https://web.archive.org/web/{stamp}id_/{url.split('?')[0]}"
-            data, _ = fetch_url(raw_url, timeout=60)
-        if data.startswith(b"%PDF"):
+        data = wayback_existing(url, max_age_days=max_age_days)
+        if data:
             return data
-        errors.append("wayback: snapshot was not a PDF")
+        errors.append("wayback: no recent snapshot")
     except Exception as exc:
         errors.append(f"wayback: {exc}")
+
+    if save:
+        try:
+            data = wayback_save(url)
+            if data:
+                return data
+            errors.append("save: not a PDF")
+        except Exception as exc:
+            errors.append(f"save: {exc}")
 
     raise RuntimeError(f"download failed for {url} ({'; '.join(errors)})")
 
 
-def travis_candidate_urls(days: int = 8) -> list[str]:
+def dated_travis(prefix: str, days: int, year4: bool = False) -> list[str]:
     now = datetime.now(PACIFIC)
     urls = []
     for i in range(days):
         d = now - timedelta(days=i)
-        stamp = f"{d.day:02d}{MONTH_ABBR[d.month - 1]}{str(d.year)[2:]}"
-        urls.append(TRAVIS_DIR + f"TRAVIS_72HRS_{stamp}.pdf")
+        yy = str(d.year) if year4 else str(d.year)[2:]
+        stamp = f"{d.day:02d}{MONTH_ABBR[d.month - 1]}{yy}"
+        urls.append(TRAVIS_DIR + f"{prefix}_{stamp}.pdf")
     return urls
+
+
+def travis_candidate_urls(days: int = 3) -> list[str]:
+    return dated_travis("TRAVIS_72HRS", days)
+
+
+def travis_30day_urls() -> list[str]:
+    now = datetime.now(PACIFIC)
+    urls = []
+    for months_ago in range(2):
+        month = now.month - months_ago
+        year = now.year
+        if month <= 0:
+            month += 12
+            year -= 1
+        stamp = f"01{MONTH_ABBR[month - 1]}{year}"
+        urls.append(TRAVIS_DIR + f"TRAVIS_30DAY_{stamp}.pdf")
+    urls.append(TRAVIS_DIR + "TRAVIS_30DAY.pdf")
+    return urls
+
+
+def fetch_first(urls: list[str], save_first: int = 2, max_age_days: int = 21) -> tuple[bytes, str]:
+    last_err: Exception | None = None
+    for i, url in enumerate(urls):
+        try:
+            return fetch_pdf_bytes(url, save=(i < save_first), max_age_days=max_age_days), url
+        except Exception as exc:
+            last_err = exc
+            continue
+    raise RuntimeError(f"No PDF found ({last_err})")
 
 
 def fetch_travis_pdf() -> tuple[bytes, str]:
-    last_err: Exception | None = None
-    for url in travis_candidate_urls():
-        try:
-            data = fetch_pdf_bytes(url)
-            return data, url
-        except Exception as exc:
-            last_err = exc
-            continue
-    raise RuntimeError(f"No recent Travis 72-hour PDF found ({last_err})")
-
-
-def travis_30day_urls(days: int = 2) -> list[str]:
-    now = datetime.now(PACIFIC)
-    urls = [TRAVIS_DIR + "TRAVIS_30DAY.pdf"]
-    for i in range(days):
-        d = now - timedelta(days=i)
-        stamp = f"{d.day:02d}{MONTH_ABBR[d.month - 1]}{str(d.year)[2:]}"
-        urls.append(TRAVIS_DIR + f"TRAVIS_30DAY_{stamp}.pdf")
-    return urls
+    return fetch_first(travis_candidate_urls(), save_first=2, max_age_days=10)
 
 
 def fetch_travis_30day() -> tuple[bytes, str]:
-    last_err: Exception | None = None
-    for url in travis_30day_urls():
-        try:
-            data = fetch_pdf_bytes(url)
-            return data, url
-        except Exception as exc:
-            last_err = exc
-            continue
-    raise RuntimeError(f"No Travis 30-day PDF found ({last_err})")
+    return fetch_first(travis_30day_urls(), save_first=1, max_age_days=40)
 
 
 def merge_boards(boards: list[dict]) -> dict:
@@ -311,7 +410,12 @@ def merge_boards(boards: list[dict]) -> dict:
     as_ofs = []
     for board in boards:
         labels.append(board["asOfLabel"])
-        sources.append({"origin": board["origin"], "url": board["sourceUrl"], "asOfLabel": board["asOfLabel"]})
+        sources.append({
+            "origin": board["origin"],
+            "url": board["sourceUrl"],
+            "asOfLabel": board["asOfLabel"],
+            "horizon": board.get("horizon", "72hr"),
+        })
         as_ofs.append(board["asOf"])
         for f in board["flights"]:
             key = (f["origin"], f["date"], f["roll"])
@@ -331,6 +435,36 @@ def merge_boards(boards: list[dict]) -> dict:
         "fetchedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "flights": flights,
     }
+
+
+def keep_previous(boards: list[dict], origin: str, label: str) -> None:
+    if any(b.get("origin") == origin and b.get("horizon") != "30day" for b in boards):
+        return
+    if not OUT.exists():
+        return
+    try:
+        old = json.loads(OUT.read_text())
+    except json.JSONDecodeError:
+        return
+    flights = [
+        f for f in old.get("flights", [])
+        if f.get("origin") == origin and f.get("horizon") != "30day"
+    ]
+    if not flights:
+        return
+    src = next((s for s in old.get("sources", []) if s.get("origin") == origin and s.get("horizon") != "30day"), None)
+    if src is None:
+        src = next((s for s in old.get("sources", []) if s.get("origin") == origin), None)
+    boards.append({
+        "origin": origin,
+        "horizon": "72hr",
+        "asOf": old.get("asOf") or "",
+        "asOfLabel": (src or {}).get("asOfLabel") or f"{label} · last good",
+        "sourceUrl": (src or {}).get("url") or "",
+        "fetchedAt": old.get("fetchedAt") or "",
+        "flights": flights,
+    })
+    print(f"kept previous {label} ({len(flights)} flights)", file=sys.stderr)
 
 
 def write_board(board: dict, path: Path) -> bool:
@@ -385,13 +519,41 @@ def self_test() -> None:
     assert "Patriot" in tdests[2][1]
     assert tdests[2][2] == "41F"
     assert travis["flights"][3]["dest"].startswith("JB Elmendorf")
-    print("self-test ok", "tcm", len(tcm["flights"]), "travis", len(travis["flights"]))
+    pe = parse_30day(
+        (Path(__file__).with_name("fixtures") / "travis30.txt").read_text(),
+        origin="suu", label_name="Travis PE", source_url="30day",
+    )
+    rows = [(f["date"], f["roll"], f["dest"], f["seats"], f["horizon"]) for f in pe["flights"]]
+    assert rows[0][0] == "2026-09-12" and rows[0][1] == "15:35", rows
+    assert "Hickam" in rows[0][2] and "Patriot" in rows[0][2]
+    assert rows[0][3] == "TBD" and rows[0][4] == "30day"
+    assert rows[1][0] == "2026-09-26" and rows[1][1] == "15:35"
+    merged = merge_boards([travis, pe])
+    pe_only = [f for f in merged["flights"] if f["horizon"] == "30day"]
+    assert any(f["date"] == "2026-09-26" for f in pe_only), pe_only
+    # 12 Sep 1535 PE from 72h (41F) wins over 30-day TBD
+    hit = next(f for f in merged["flights"] if f["date"] == "2026-09-12" and f["roll"] == "15:35")
+    assert hit["seats"] == "41F" and hit["horizon"] == "72hr", hit
+    print("self-test ok", "tcm", len(tcm["flights"]), "travis", len(travis["flights"]), "pe", len(pe["flights"]))
 
 
 def load_terminal(origin: str, label: str, url: str, text: str, horizon: str = "72hr") -> dict:
-    board = parse_outlook(text, origin=origin, label_name=label, source_url=url, horizon=horizon)
+    if horizon == "30day":
+        board = parse_30day(text, origin=origin, label_name=label, source_url=url)
+    else:
+        board = parse_outlook(text, origin=origin, label_name=label, source_url=url, horizon=horizon)
     print(f"{label}: {len(board['flights'])} flights · {board['asOfLabel']}")
     return board
+
+
+def load_from_bytes(origin: str, label: str, url: str, data: bytes, horizon: str = "72hr") -> dict:
+    with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+        path = Path(tmp.name)
+        path.write_bytes(data)
+    try:
+        return load_terminal(origin, label, url, pdf_text(path), horizon=horizon)
+    finally:
+        path.unlink(missing_ok=True)
 
 
 def main() -> int:
@@ -412,40 +574,24 @@ def main() -> int:
         boards: list[dict] = []
         errors: list[str] = []
         try:
-            data = fetch_pdf_bytes(TCM_PDF)
-            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
-                tmp_path = Path(tmp.name)
-                tmp_path.write_bytes(data)
-            try:
-                boards.append(load_terminal("tcm", "McChord", TCM_PDF, pdf_text(tmp_path)))
-            finally:
-                tmp_path.unlink(missing_ok=True)
+            data = fetch_pdf_bytes(TCM_PDF, save=True, max_age_days=7)
+            boards.append(load_from_bytes("tcm", "McChord", TCM_PDF, data))
         except Exception as exc:
             errors.append(f"McChord: {exc}")
             print(f"McChord failed: {exc}", file=sys.stderr)
+            keep_previous(boards, "tcm", "McChord")
 
         try:
             data, url = fetch_travis_pdf()
-            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
-                tmp_path = Path(tmp.name)
-                tmp_path.write_bytes(data)
-            try:
-                boards.append(load_terminal("suu", "Travis", url, pdf_text(tmp_path)))
-            finally:
-                tmp_path.unlink(missing_ok=True)
+            boards.append(load_from_bytes("suu", "Travis", url, data))
         except Exception as exc:
             errors.append(f"Travis: {exc}")
             print(f"Travis failed: {exc}", file=sys.stderr)
+            keep_previous(boards, "suu", "Travis")
 
         try:
             data, url = fetch_travis_30day()
-            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
-                tmp_path = Path(tmp.name)
-                tmp_path.write_bytes(data)
-            try:
-                boards.append(load_terminal("suu", "Travis 30-day", url, pdf_text(tmp_path), horizon="30day"))
-            finally:
-                tmp_path.unlink(missing_ok=True)
+            boards.append(load_from_bytes("suu", "Travis PE", url, data, horizon="30day"))
         except Exception as exc:
             print(f"Travis 30-day skipped: {exc}", file=sys.stderr)
 

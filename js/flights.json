@@ -1,6 +1,6 @@
 {
   "asOf": "2026-09-12T06:30:00-07:00",
-  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 12 Sep 2026  ·  Travis PE · Sep 2026",
+  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 12 Sep 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -14,15 +14,9 @@
       "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_12SEP26.pdf",
       "asOfLabel": "Travis · 12 Sep 2026",
       "horizon": "72hr"
-    },
-    {
-      "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_30DAY_01SEP2026.pdf",
-      "asOfLabel": "Travis PE · Sep 2026",
-      "horizon": "30day"
     }
   ],
-  "fetchedAt": "2026-09-13T00:34:57Z",
+  "fetchedAt": "2026-09-14T07:34:46Z",
   "flights": [
     {
       "id": "suu-0912-jb-pearl-harbor-hickam-hi-andersen-afb-guam-kade-0640",
@@ -143,18 +137,6 @@
       "kind": "tbd",
       "note": "Seat count unpublished",
       "horizon": "72hr"
-    },
-    {
-      "id": "suu-0926-jb-pearl-harbor-hickam-hi-patriot-express-1535",
-      "origin": "suu",
-      "date": "2026-09-26",
-      "roll": "15:35",
-      "dest": "JB Pearl Harbor-Hickam, HI (Patriot Express)",
-      "destKey": "jb pearl harbor-hickam, hi (patriot express) jb pearl harbor-hickam, hi (patriot express) patriot express rotator hickam hawaii honolulu",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "30day"
     }
   ]
 }

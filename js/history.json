@@ -1,6 +1,17 @@
 {
-  "updatedAt": "2026-09-14T07:35:29Z",
+  "updatedAt": "2026-09-14T19:09:12Z",
   "rows": [
+    {
+      "id": "tcm-2026-09-14-jb-elmendorf-ak-TBD",
+      "origin": "tcm",
+      "date": "2026-09-14",
+      "roll": "07:00",
+      "dest": "JB Elmendorf, AK",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-09-13-march-arb-ca-19T",
       "origin": "suu",

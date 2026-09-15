@@ -1,6 +1,16 @@
 {
   "notifiedIds": [
+    "travis-hawaii:suu-0916-jb-pearl-harbor-hickam-hi-1100",
+    "travis-hawaii:suu-0916-jb-pearl-harbor-hickam-hi-kadena-ab-japan-yokota-0640",
+    "travis-hawaii:suu-0917-jb-pearl-harbor-hickam-hi-andersen-afb-guam-0355",
+    "travis-hawaii:suu-0917-jb-pearl-harbor-hickam-hi-kadena-ab-japan-1615",
     "travis-hawaii:suu-0926-jb-pearl-harbor-hickam-hi-patriot-express-1535"
   ],
-  "lastMatches": []
+  "lastMatches": [
+    "travis-hawaii:suu-0916-jb-pearl-harbor-hickam-hi-kadena-ab-japan-yokota-0640",
+    "travis-hawaii:suu-0916-jb-pearl-harbor-hickam-hi-1100",
+    "travis-hawaii:suu-0917-jb-pearl-harbor-hickam-hi-andersen-afb-guam-0355",
+    "travis-hawaii:suu-0917-jb-pearl-harbor-hickam-hi-kadena-ab-japan-1615",
+    "travis-hawaii:suu-0926-jb-pearl-harbor-hickam-hi-patriot-express-1535"
+  ]
 }

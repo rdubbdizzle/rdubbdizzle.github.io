@@ -1,6 +1,50 @@
 {
-  "updatedAt": "2026-09-16T07:15:20Z",
+  "updatedAt": "2026-09-16T18:03:12Z",
   "rows": [
+    {
+      "id": "suu-2026-09-16-scott-afb-il-53T",
+      "origin": "suu",
+      "date": "2026-09-16",
+      "roll": "07:40",
+      "dest": "Scott AFB, IL",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-16-north-island-nas-ca-19T",
+      "origin": "suu",
+      "date": "2026-09-16",
+      "roll": "07:55",
+      "dest": "North Island NAS, CA",
+      "released": "19T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-16-jb-pearl-harbor-hickam-hi-kadena-ab-japan-yokota-73T",
+      "origin": "suu",
+      "date": "2026-09-16",
+      "roll": "06:40",
+      "dest": "JB Pearl Harbor-Hickam, HI / Kadena AB, Japan / Yokota AB, Japan",
+      "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-16-jb-pearl-harbor-hickam-hi-53T",
+      "origin": "suu",
+      "date": "2026-09-16",
+      "roll": "11:00",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-09-15-jb-lewis-mcchord-wa-53F",
       "origin": "suu",

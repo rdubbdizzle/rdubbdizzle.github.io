@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-16T18:03:12Z",
+  "updatedAt": "2026-09-17T07:13:26Z",
   "rows": [
     {
       "id": "suu-2026-09-16-scott-afb-il-53T",
@@ -41,6 +41,17 @@
       "roll": "11:00",
       "dest": "JB Pearl Harbor-Hickam, HI",
       "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-16-charlotte-nc-27T",
+      "origin": "suu",
+      "date": "2026-09-16",
+      "roll": "23:40",
+      "dest": "Charlotte, NC",
+      "released": "27T",
       "used": "",
       "cat": "",
       "source": "72hr"

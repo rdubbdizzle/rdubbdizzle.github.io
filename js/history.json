@@ -1,6 +1,17 @@
 {
-  "updatedAt": "2026-09-17T07:13:26Z",
+  "updatedAt": "2026-09-17T18:02:18Z",
   "rows": [
+    {
+      "id": "suu-2026-09-17-jb-pearl-harbor-hickam-hi-andersen-afb-guam-53T",
+      "origin": "suu",
+      "date": "2026-09-17",
+      "roll": "03:55",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-09-16-scott-afb-il-53T",
       "origin": "suu",

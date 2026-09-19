@@ -1,6 +1,28 @@
 {
-  "updatedAt": "2026-09-19T07:03:43Z",
+  "updatedAt": "2026-09-19T17:07:01Z",
   "rows": [
+    {
+      "id": "suu-2026-09-19-jb-pearl-harbor-hickam-hi-andersen-afb-guam-2F",
+      "origin": "suu",
+      "date": "2026-09-19",
+      "roll": "09:40",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam",
+      "released": "2F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-19-andersen-afb-guam-10F",
+      "origin": "suu",
+      "date": "2026-09-19",
+      "roll": "06:40",
+      "dest": "Andersen AFB, Guam",
+      "released": "10F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-09-18-tbd-jb-elmendorf-richardson-ak-yokota-ab-japan-o-TBD",
       "origin": "suu",
@@ -276,6 +298,16 @@
       "released": "19",
       "used": "6",
       "cat": "VI",
+      "source": "rollcall"
+    },
+    {
+      "id": "tcm-2026-09-04-travis-afb-ca-53",
+      "origin": "tcm",
+      "date": "2026-09-04",
+      "dest": "Travis AFB, CA",
+      "released": "53",
+      "used": "0",
+      "cat": "",
       "source": "rollcall"
     },
     {

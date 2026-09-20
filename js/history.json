@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-19T17:07:01Z",
+  "updatedAt": "2026-09-20T07:27:49Z",
   "rows": [
     {
       "id": "suu-2026-09-19-jb-pearl-harbor-hickam-hi-andersen-afb-guam-2F",
@@ -8,6 +8,28 @@
       "roll": "09:40",
       "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam",
       "released": "2F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-19-jb-pearl-harbor-hickam-hi-andersen-afb-guam-14F",
+      "origin": "suu",
+      "date": "2026-09-19",
+      "roll": "13:45",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam",
+      "released": "14F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-19-jb-elmendorf-richardson-ak-yokota-ab-japan-kaden-19F",
+      "origin": "suu",
+      "date": "2026-09-19",
+      "roll": "10:25",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Kadena AB, Japan",
+      "released": "19F",
       "used": "",
       "cat": "",
       "source": "72hr"

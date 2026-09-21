@@ -1,6 +1,17 @@
 {
-  "updatedAt": "2026-09-21T07:40:13Z",
+  "updatedAt": "2026-09-21T19:12:06Z",
   "rows": [
+    {
+      "id": "suu-2026-09-21-norfolk-nas-va-73T",
+      "origin": "suu",
+      "date": "2026-09-21",
+      "roll": "05:40",
+      "dest": "Norfolk NAS, VA",
+      "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-09-20-jb-elmendorf-richardson-ak-yokota-ab-japan-osan--TBD",
       "origin": "suu",

@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-09-20T06:00:00-07:00",
-  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 20 Sep 2026  ·  Travis PE · Sep 2026",
+  "asOf": "2026-09-22T06:00:00-07:00",
+  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 22 Sep 2026  ·  Travis PE · Sep 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,8 +11,8 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_20SEP26.pdf",
-      "asOfLabel": "Travis · 20 Sep 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_22SEP26.pdf",
+      "asOfLabel": "Travis · 22 Sep 2026",
       "horizon": "72hr"
     },
     {
@@ -22,7 +22,7 @@
       "horizon": "30day"
     }
   ],
-  "fetchedAt": "2026-09-22T18:02:54Z",
+  "fetchedAt": "2026-09-23T18:19:25Z",
   "flights": [
     {
       "id": "tcm-0912-mcguire-afb-nj-1150",
@@ -85,63 +85,111 @@
       "horizon": "72hr"
     },
     {
-      "id": "suu-0920-jb-elmendorf-richardson-ak-yokota-ab-japan-osan--0925",
+      "id": "suu-0923-jb-pearl-harbor-hickam-hi-andersen-afb-guam-kade-0525",
       "origin": "suu",
-      "date": "2026-09-20",
-      "roll": "09:25",
-      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Osan AB, Korea",
-      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan / osan ab, korea jb elmendorf-richardson, ak yokota ab, japan osan ab, korea",
-      "seats": "1F",
-      "kind": "firm",
-      "note": "1 firm seat posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-0921-norfolk-nas-va-0540",
-      "origin": "suu",
-      "date": "2026-09-21",
-      "roll": "05:40",
-      "dest": "Norfolk NAS, VA",
-      "destKey": "norfolk nas, va norfolk nas, va",
+      "date": "2026-09-23",
+      "roll": "05:25",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam / Kadena AB, Japan / Osan AB, Korea",
+      "destKey": "jb pearl harbor-hickam, hi / andersen afb, guam / kadena ab, japan / osan ab, korea jb pearl harbor-hickam, hi andersen afb, guam kadena ab, japan osan ab, korea hawaii honolulu",
       "seats": "73T",
       "kind": "tent",
       "note": "73 tentative seats posted",
       "horizon": "72hr"
     },
     {
-      "id": "suu-0922-jb-elmendorf-richardson-ak-yokota-ab-japan-0410",
+      "id": "suu-0923-wright-patterson-afb-oh-0715",
       "origin": "suu",
-      "date": "2026-09-22",
-      "roll": "04:10",
-      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan",
-      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan jb elmendorf-richardson, ak yokota ab, japan",
+      "date": "2026-09-23",
+      "roll": "07:15",
+      "dest": "Wright-Patterson AFB, OH",
+      "destKey": "wright-patterson afb, oh wright-patterson afb, oh",
+      "seats": "19T",
+      "kind": "tent",
+      "note": "19 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-0923-jb-pearl-harbor-hickam-hi-1120",
+      "origin": "suu",
+      "date": "2026-09-23",
+      "roll": "11:20",
+      "dest": "JB Pearl Harbor-Hickam HI",
+      "destKey": "jb pearl harbor-hickam hi jb pearl harbor-hickam hi hawaii honolulu",
       "seats": "TBD",
       "kind": "tbd",
       "note": "Seat count unpublished",
       "horizon": "72hr"
     },
     {
-      "id": "suu-0922-jb-pearl-harbor-hickam-hi-1220",
+      "id": "suu-0923-nellis-afb-nv-1355",
       "origin": "suu",
-      "date": "2026-09-22",
-      "roll": "12:20",
+      "date": "2026-09-23",
+      "roll": "13:55",
+      "dest": "Nellis AFB, NV",
+      "destKey": "nellis afb, nv nellis afb, nv",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-0924-jb-lewis-mcchord-wa-0515",
+      "origin": "suu",
+      "date": "2026-09-24",
+      "roll": "05:15",
+      "dest": "JB Lewis-McChord, WA",
+      "destKey": "jb lewis-mcchord, wa jb lewis-mcchord, wa",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-0924-peterson-sfb-co-0530",
+      "origin": "suu",
+      "date": "2026-09-24",
+      "roll": "05:30",
+      "dest": "Peterson Sfb, CO",
+      "destKey": "peterson sfb, co peterson sfb, co",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-0924-jb-elmendorf-richardson-ak-yokota-ab-japan-osan--0555",
+      "origin": "suu",
+      "date": "2026-09-24",
+      "roll": "05:55",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Osan AB, Korea",
+      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan / osan ab, korea jb elmendorf-richardson, ak yokota ab, japan osan ab, korea",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-0924-jb-lewis-mcchord-wa-0920",
+      "origin": "suu",
+      "date": "2026-09-24",
+      "roll": "09:20",
+      "dest": "JB Lewis-McChord, WA",
+      "destKey": "jb lewis-mcchord, wa jb lewis-mcchord, wa",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-0924-jb-pearl-harbor-hickam-hi-1030",
+      "origin": "suu",
+      "date": "2026-09-24",
+      "roll": "10:30",
       "dest": "JB Pearl Harbor-Hickam, HI",
       "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-0922-kaneohe-bay-hi-andersen-afb-guam-1745",
-      "origin": "suu",
-      "date": "2026-09-22",
-      "roll": "17:45",
-      "dest": "Kaneohe Bay, HI / Andersen AFB, Guam",
-      "destKey": "kaneohe bay, hi / andersen afb, guam kaneohe bay , hi andersen afb, guam",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
       "horizon": "72hr"
     },
     {

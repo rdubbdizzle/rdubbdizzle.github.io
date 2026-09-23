@@ -1,6 +1,28 @@
 {
-  "updatedAt": "2026-09-23T07:24:06Z",
+  "updatedAt": "2026-09-23T18:19:51Z",
   "rows": [
+    {
+      "id": "suu-2026-09-23-wright-patterson-afb-oh-19T",
+      "origin": "suu",
+      "date": "2026-09-23",
+      "roll": "07:15",
+      "dest": "Wright-Patterson AFB, OH",
+      "released": "19T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-23-jb-pearl-harbor-hickam-hi-andersen-afb-guam-kade-73T",
+      "origin": "suu",
+      "date": "2026-09-23",
+      "roll": "05:25",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam / Kadena AB, Japan / Osan AB, Korea",
+      "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-09-22-kaneohe-bay-hi-andersen-afb-guam-TBD",
       "origin": "suu",

@@ -1,6 +1,28 @@
 {
-  "updatedAt": "2026-09-22T18:04:36Z",
+  "updatedAt": "2026-09-23T07:24:06Z",
   "rows": [
+    {
+      "id": "suu-2026-09-22-kaneohe-bay-hi-andersen-afb-guam-TBD",
+      "origin": "suu",
+      "date": "2026-09-22",
+      "roll": "17:45",
+      "dest": "Kaneohe Bay, HI / Andersen AFB, Guam",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-22-jb-pearl-harbor-hickam-hi-TBD",
+      "origin": "suu",
+      "date": "2026-09-22",
+      "roll": "12:20",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-09-22-jb-elmendorf-richardson-ak-yokota-ab-japan-TBD",
       "origin": "suu",

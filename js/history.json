@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-23T18:19:51Z",
+  "updatedAt": "2026-09-24T07:16:16Z",
   "rows": [
     {
       "id": "suu-2026-09-23-wright-patterson-afb-oh-19T",
@@ -13,12 +13,34 @@
       "source": "72hr"
     },
     {
+      "id": "suu-2026-09-23-nellis-afb-nv-53T",
+      "origin": "suu",
+      "date": "2026-09-23",
+      "roll": "13:55",
+      "dest": "Nellis AFB, NV",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
       "id": "suu-2026-09-23-jb-pearl-harbor-hickam-hi-andersen-afb-guam-kade-73T",
       "origin": "suu",
       "date": "2026-09-23",
       "roll": "05:25",
       "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam / Kadena AB, Japan / Osan AB, Korea",
       "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-23-jb-pearl-harbor-hickam-hi-TBD",
+      "origin": "suu",
+      "date": "2026-09-23",
+      "roll": "11:20",
+      "dest": "JB Pearl Harbor-Hickam HI",
+      "released": "TBD",
       "used": "",
       "cat": "",
       "source": "72hr"

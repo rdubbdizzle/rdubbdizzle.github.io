@@ -1,6 +1,50 @@
 {
-  "updatedAt": "2026-09-27T07:39:01Z",
+  "updatedAt": "2026-09-27T18:10:38Z",
   "rows": [
+    {
+      "id": "suu-2026-09-27-jb-pearl-harbor-hickam-hi-andersen-afb-guam-73F",
+      "origin": "suu",
+      "date": "2026-09-27",
+      "roll": "05:50",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam",
+      "released": "73F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-27-jb-pearl-harbor-hickam-hi-andersen-afb-guam-TBD",
+      "origin": "suu",
+      "date": "2026-09-27",
+      "roll": "06:55",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-27-jb-pearl-harbor-hickam-hi-53T",
+      "origin": "suu",
+      "date": "2026-09-27",
+      "roll": "10:55",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-09-26-jb-pearl-harbor-hickam-hi-patriot-express-TBD",
+      "origin": "suu",
+      "date": "2026-09-26",
+      "roll": "15:35",
+      "dest": "JB Pearl Harbor-Hickam, HI (Patriot Express)",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "30day"
+    },
     {
       "id": "suu-2026-09-24-peterson-sfb-co-TBD",
       "origin": "suu",

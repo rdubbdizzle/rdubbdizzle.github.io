@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-09-26T06:00:00-07:00",
-  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 26 Sep 2026",
+  "asOf": "2026-09-28T06:00:00-07:00",
+  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 28 Sep 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,12 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_26SEP26.pdf",
-      "asOfLabel": "Travis · 26 Sep 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_28SEP26.pdf",
+      "asOfLabel": "Travis · 28 Sep 2026",
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-09-28T08:15:04Z",
+  "fetchedAt": "2026-09-28T20:28:48Z",
   "flights": [
     {
       "id": "tcm-0912-mcguire-afb-nj-1150",
@@ -67,87 +67,15 @@
       "horizon": "72hr"
     },
     {
-      "id": "suu-0927-jb-pearl-harbor-hickam-hi-andersen-afb-guam-0550",
+      "id": "suu-0930-jb-elmendorf-richardson-ak-yokota-ab-japan-1810",
       "origin": "suu",
-      "date": "2026-09-27",
-      "roll": "05:50",
-      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam",
-      "destKey": "jb pearl harbor-hickam, hi / andersen afb, guam jb pearl harbor-hickam, hi andersen afb, guam hawaii honolulu",
-      "seats": "73F",
-      "kind": "firm",
-      "note": "73 firm seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-0927-jb-pearl-harbor-hickam-hi-andersen-afb-guam-0655",
-      "origin": "suu",
-      "date": "2026-09-27",
-      "roll": "06:55",
-      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam",
-      "destKey": "jb pearl harbor-hickam, hi / andersen afb, guam jb pearl harbor-hickam, hi andersen afb, guam hawaii honolulu",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-0927-jb-pearl-harbor-hickam-hi-1055",
-      "origin": "suu",
-      "date": "2026-09-27",
-      "roll": "10:55",
-      "dest": "JB Pearl Harbor-Hickam, HI",
-      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
-      "seats": "53T",
-      "kind": "tent",
-      "note": "53 tentative seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-0927-jb-elmendorf-richardson-ak-kadena-ab-japan-1210",
-      "origin": "suu",
-      "date": "2026-09-27",
-      "roll": "12:10",
-      "dest": "JB Elmendorf-Richardson, AK / Kadena AB, Japan",
-      "destKey": "jb elmendorf-richardson, ak / kadena ab, japan jb elmendorf-richardson, ak kadena ab, japan",
-      "seats": "53T",
-      "kind": "tent",
-      "note": "53 tentative seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-0927-jb-elmendorf-richardson-ak-yokota-ab-japan-1750",
-      "origin": "suu",
-      "date": "2026-09-27",
-      "roll": "17:50",
+      "date": "2026-09-30",
+      "roll": "18:10",
       "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan",
       "destKey": "jb elmendorf-richardson, ak / yokota ab, japan jb elmendorf-richardson, ak yokota ab, japan",
       "seats": "TBD",
       "kind": "tbd",
       "note": "Seat count unpublished",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-0928-north-island-nas-ca-0825",
-      "origin": "suu",
-      "date": "2026-09-28",
-      "roll": "08:25",
-      "dest": "North Island NAS, CA",
-      "destKey": "north island nas, ca north island nas, ca",
-      "seats": "73T",
-      "kind": "tent",
-      "note": "73 tentative seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-0928-jb-andrews-md-2005",
-      "origin": "suu",
-      "date": "2026-09-28",
-      "roll": "20:05",
-      "dest": "JB Andrews, MD",
-      "destKey": "jb andrews, md jb andrews, md",
-      "seats": "53T",
-      "kind": "tent",
-      "note": "53 tentative seats posted",
       "horizon": "72hr"
     }
   ]

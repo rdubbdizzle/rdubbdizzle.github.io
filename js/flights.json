@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-09-28T06:00:00-07:00",
-  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 28 Sep 2026  ·  Travis PE · Sep 2026",
+  "asOf": "2026-09-29T06:00:00-07:00",
+  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 29 Sep 2026  ·  Travis PE · Sep 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,8 +11,8 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_28SEP26.pdf",
-      "asOfLabel": "Travis · 28 Sep 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_29SEP26.pdf",
+      "asOfLabel": "Travis · 29 Sep 2026",
       "horizon": "72hr"
     },
     {
@@ -22,7 +22,7 @@
       "horizon": "30day"
     }
   ],
-  "fetchedAt": "2026-09-29T07:53:52Z",
+  "fetchedAt": "2026-09-29T19:13:02Z",
   "flights": [
     {
       "id": "tcm-0912-mcguire-afb-nj-1150",
@@ -97,12 +97,72 @@
       "horizon": "30day"
     },
     {
-      "id": "suu-0930-jb-elmendorf-richardson-ak-yokota-ab-japan-1810",
+      "id": "suu-0929-north-island-nas-ca-0825",
       "origin": "suu",
-      "date": "2026-09-30",
-      "roll": "18:10",
-      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan",
-      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan jb elmendorf-richardson, ak yokota ab, japan",
+      "date": "2026-09-29",
+      "roll": "08:25",
+      "dest": "North Island NAS, CA",
+      "destKey": "north island nas, ca north island nas, ca",
+      "seats": "19F",
+      "kind": "firm",
+      "note": "19 firm seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1001-jb-elmendorf-richardson-ak-yokota-ab-japan-kaden-0455",
+      "origin": "suu",
+      "date": "2026-10-01",
+      "roll": "04:55",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Kadena AB, Japan",
+      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan / kadena ab, japan jb elmendorf-richardson, ak yokota ab, japan kadena ab, japan",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1001-kelly-field-tx-0545",
+      "origin": "suu",
+      "date": "2026-10-01",
+      "roll": "05:45",
+      "dest": "Kelly FIELD, TX",
+      "destKey": "kelly field, tx kelly field, tx",
+      "seats": "73T",
+      "kind": "tent",
+      "note": "73 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1001-jb-pearl-harbor-hickam-hi-0950",
+      "origin": "suu",
+      "date": "2026-10-01",
+      "roll": "09:50",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1001-ramstein-ab-germany-1345",
+      "origin": "suu",
+      "date": "2026-10-01",
+      "roll": "13:45",
+      "dest": "Ramstein AB, Germany",
+      "destKey": "ramstein ab, germany ramstein ab, germany",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1001-jb-pearl-harbor-hickam-hi-andersen-afb-guam-kade-1555",
+      "origin": "suu",
+      "date": "2026-10-01",
+      "roll": "15:55",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam / Kadena AB, Japan",
+      "destKey": "jb pearl harbor-hickam, hi / andersen afb, guam / kadena ab, japan jb pearl harbor-hickam, hi andersen afb, guam kadena ab, japan hawaii honolulu",
       "seats": "TBD",
       "kind": "tbd",
       "note": "Seat count unpublished",

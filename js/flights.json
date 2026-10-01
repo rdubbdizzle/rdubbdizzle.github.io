@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-09-29T06:00:00-07:00",
-  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 28 Sep 2026",
+  "asOf": "2026-09-30T06:00:00-07:00",
+  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 30 Sep 2026  ·  Travis PE · Sep 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,18 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_28SEP26.pdf",
-      "asOfLabel": "Travis · 28 Sep 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_30SEP26.pdf",
+      "asOfLabel": "Travis · 30 Sep 2026",
       "horizon": "72hr"
+    },
+    {
+      "origin": "suu",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_30DAY_01SEP2026.pdf",
+      "asOfLabel": "Travis PE · Sep 2026",
+      "horizon": "30day"
     }
   ],
-  "fetchedAt": "2026-09-30T08:03:32Z",
+  "fetchedAt": "2026-10-01T08:20:02Z",
   "flights": [
     {
       "id": "tcm-0912-mcguire-afb-nj-1150",
@@ -29,6 +35,18 @@
       "kind": "firm",
       "note": "53 firm seats posted",
       "horizon": "72hr"
+    },
+    {
+      "id": "suu-0912-r-terminal-september-2026-destinationroll-call-d-1535",
+      "origin": "suu",
+      "date": "2026-09-12",
+      "roll": "15:35",
+      "dest": "R Terminal September 2026 Destinationroll Call Date / Time JB Pearl Harbor-Hickam, HI (Patriot Express)",
+      "destKey": "r terminal september 2026 destinationroll call date / time jb pearl harbor-hickam, hi (patriot express) r terminal september 2026 destinationroll call date / time jb pearl harbor-hickam, hi (patriot express) patriot express rotator hickam hawaii honolulu",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "30day"
     },
     {
       "id": "tcm-0914-jb-elmendorf-ak-0700",
@@ -67,10 +85,130 @@
       "horizon": "72hr"
     },
     {
-      "id": "suu-0930-jb-elmendorf-richardson-ak-yokota-ab-japan-1810",
+      "id": "suu-0926-jb-pearl-harbor-hickam-hi-patriot-express-1535",
       "origin": "suu",
-      "date": "2026-09-30",
-      "roll": "18:10",
+      "date": "2026-09-26",
+      "roll": "15:35",
+      "dest": "JB Pearl Harbor-Hickam, HI (Patriot Express)",
+      "destKey": "jb pearl harbor-hickam, hi (patriot express) jb pearl harbor-hickam, hi (patriot express) patriot express rotator hickam hawaii honolulu",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "30day"
+    },
+    {
+      "id": "suu-1001-jb-pearl-harbor-hickam-hi-0950",
+      "origin": "suu",
+      "date": "2026-10-01",
+      "roll": "09:50",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1001-davis-monthan-az-1000",
+      "origin": "suu",
+      "date": "2026-10-01",
+      "roll": "10:00",
+      "dest": "Davis-Monthan, AZ",
+      "destKey": "davis-monthan, az davis-monthan, az",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1001-jb-elmendorf-richardson-ak-kadena-ab-japan-1555",
+      "origin": "suu",
+      "date": "2026-10-01",
+      "roll": "15:55",
+      "dest": "JB Elmendorf-Richardson, AK / Kadena AB, Japan",
+      "destKey": "jb elmendorf-richardson, ak / kadena ab, japan jb elmendorf-richardson, ak kadena ab, japan",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1002-jb-elmendorf-richardson-ak-0645",
+      "origin": "suu",
+      "date": "2026-10-02",
+      "roll": "06:45",
+      "dest": "JB Elmendorf-Richardson, AK",
+      "destKey": "jb elmendorf-richardson, ak jb elmendorf-richardson, ak",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1002-hunter-aaf-ga-0710",
+      "origin": "suu",
+      "date": "2026-10-02",
+      "roll": "07:10",
+      "dest": "Hunter Aaf, GA",
+      "destKey": "hunter aaf, ga hunter aaf, ga",
+      "seats": "10T",
+      "kind": "tent",
+      "note": "10 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1002-jb-lindsey-graham-sc-1100",
+      "origin": "suu",
+      "date": "2026-10-02",
+      "roll": "11:00",
+      "dest": "JB Lindsey Graham, SC",
+      "destKey": "jb lindsey graham, sc jb lindsey graham, sc",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1002-kelly-field-tx-1325",
+      "origin": "suu",
+      "date": "2026-10-02",
+      "roll": "13:25",
+      "dest": "Kelly FIELD, TX",
+      "destKey": "kelly field, tx kelly field, tx",
+      "seats": "73T",
+      "kind": "tent",
+      "note": "73 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1002-bangor-intl-me-1345",
+      "origin": "suu",
+      "date": "2026-10-02",
+      "roll": "13:45",
+      "dest": "Bangor INTL, ME",
+      "destKey": "bangor intl, me bangor intl, me",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1002-north-island-nas-ca-1355",
+      "origin": "suu",
+      "date": "2026-10-02",
+      "roll": "13:55",
+      "dest": "North Island NAS, CA",
+      "destKey": "north island nas, ca north island nas, ca",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1002-jb-elmendorf-richardson-ak-yokota-ab-japan-2310",
+      "origin": "suu",
+      "date": "2026-10-02",
+      "roll": "23:10",
       "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan",
       "destKey": "jb elmendorf-richardson, ak / yokota ab, japan jb elmendorf-richardson, ak yokota ab, japan",
       "seats": "TBD",

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-02T19:12:23Z",
+  "updatedAt": "2026-10-03T07:38:03Z",
   "rows": [
     {
       "id": "suu-2026-10-02-hunter-aaf-ga-10T",
@@ -8,6 +8,17 @@
       "roll": "02:55",
       "dest": "Hunter Aaf, GA",
       "released": "10T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-10-02-bangor-intl-me-TBD",
+      "origin": "suu",
+      "date": "2026-10-02",
+      "roll": "13:45",
+      "dest": "Bangor INTL, ME",
+      "released": "TBD",
       "used": "",
       "cat": "",
       "source": "72hr"

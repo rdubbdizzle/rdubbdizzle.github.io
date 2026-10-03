@@ -1,12 +1,12 @@
 {
   "asOf": "2026-10-01T06:00:00-07:00",
-  "asOfLabel": "McChord · 12 Sep 2026, 0630L  ·  Travis · 1 Oct 2026",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 1 Oct 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
       "origin": "tcm",
       "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
-      "asOfLabel": "McChord · 12 Sep 2026, 0630L",
+      "asOfLabel": "McChord · 1 Oct 2026, 0600L",
       "horizon": "72hr"
     },
     {
@@ -16,54 +16,42 @@
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-10-02T07:56:50Z",
+  "fetchedAt": "2026-10-03T17:52:14Z",
   "flights": [
     {
-      "id": "tcm-0912-mcguire-afb-nj-1150",
+      "id": "tcm-1001-harry-reid-intl-nv-0600",
       "origin": "tcm",
-      "date": "2026-09-12",
-      "roll": "11:50",
-      "dest": "McGuire AFB, NJ",
-      "destKey": "mcguire afb, nj mguire afb, nj",
+      "date": "2026-10-01",
+      "roll": "06:00",
+      "dest": "Harry Reid INTL, NV",
+      "destKey": "harry reid intl, nv harry reid intl, nv",
       "seats": "53F",
       "kind": "firm",
       "note": "53 firm seats posted",
       "horizon": "72hr"
     },
     {
-      "id": "tcm-0914-jb-elmendorf-ak-0700",
+      "id": "tcm-1001-daniel-k-inouye-intl-hi-0700",
       "origin": "tcm",
-      "date": "2026-09-14",
+      "date": "2026-10-01",
       "roll": "07:00",
-      "dest": "JB Elmendorf, AK",
-      "destKey": "jb elmendorf, ak jb elmendorf, ak",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
+      "dest": "Daniel K Inouye INTL, HI",
+      "destKey": "daniel k inouye intl, hi daniel k inouye intl, hi",
+      "seats": "0F",
+      "kind": "firm",
+      "note": "0 firm seats posted",
       "horizon": "72hr"
     },
     {
-      "id": "tcm-0914-jb-elmendorf-ak-0730",
+      "id": "tcm-1001-mcguire-afb-nj-1150",
       "origin": "tcm",
-      "date": "2026-09-14",
-      "roll": "07:30",
-      "dest": "JB Elmendorf, AK",
-      "destKey": "jb elmendorf, ak jb elmendorf, ak",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-0914-jb-elmendorf-ak-1100",
-      "origin": "tcm",
-      "date": "2026-09-14",
-      "roll": "11:00",
-      "dest": "JB Elmendorf, AK",
-      "destKey": "jb elmendorf, ak jb elmendorf, ak",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
+      "date": "2026-10-01",
+      "roll": "11:50",
+      "dest": "McGuire AFB, NJ",
+      "destKey": "mcguire afb, nj mguire afb, nj",
+      "seats": "53F",
+      "kind": "firm",
+      "note": "53 firm seats posted",
       "horizon": "72hr"
     },
     {
@@ -76,6 +64,30 @@
       "seats": "10T",
       "kind": "tent",
       "note": "10 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-1002-dover-afb-de-0600",
+      "origin": "tcm",
+      "date": "2026-10-02",
+      "roll": "06:00",
+      "dest": "Dover AFB, DE",
+      "destKey": "dover afb, de dover afb, de",
+      "seats": "53F",
+      "kind": "firm",
+      "note": "53 firm seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-1002-grand-junction-rgnl-co-0700",
+      "origin": "tcm",
+      "date": "2026-10-02",
+      "roll": "07:00",
+      "dest": "Grand Junction Rgnl, CO",
+      "destKey": "grand junction rgnl, co grand junction rgnl, co",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
       "horizon": "72hr"
     },
     {
@@ -151,6 +163,18 @@
       "horizon": "72hr"
     },
     {
+      "id": "tcm-1003-ramstein-ab-germany-1115",
+      "origin": "tcm",
+      "date": "2026-10-03",
+      "roll": "11:15",
+      "dest": "Ramstein AB, Germany",
+      "destKey": "ramstein ab, germany ramstein ab, germany",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
       "id": "suu-1003-wright-patterson-afb-oh-1200",
       "origin": "suu",
       "date": "2026-10-03",
@@ -160,6 +184,18 @@
       "seats": "19T",
       "kind": "tent",
       "note": "19 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-1003-travis-afb-ca-1200",
+      "origin": "tcm",
+      "date": "2026-10-03",
+      "roll": "12:00",
+      "dest": "Travis AFB, CA",
+      "destKey": "travis afb, ca tra vis afb, ca",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
       "horizon": "72hr"
     },
     {

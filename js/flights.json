@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-10-02T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 2 Oct 2026",
+  "asOf": "2026-10-03T06:00:00-07:00",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 3 Oct 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,12 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_02OCT26.pdf",
-      "asOfLabel": "Travis · 2 Oct 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_03OCT26.pdf",
+      "asOfLabel": "Travis · 3 Oct 2026",
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-10-04T07:49:18Z",
+  "fetchedAt": "2026-10-04T18:03:00Z",
   "flights": [
     {
       "id": "tcm-1001-harry-reid-intl-nv-0600",
@@ -97,6 +97,54 @@
       "roll": "12:00",
       "dest": "Travis AFB, CA",
       "destKey": "travis afb, ca tra vis afb, ca",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1005-holloman-afb-nm-0540",
+      "origin": "suu",
+      "date": "2026-10-05",
+      "roll": "05:40",
+      "dest": "Holloman AFB, NM",
+      "destKey": "holloman afb, nm holloman afb, nm",
+      "seats": "19T",
+      "kind": "tent",
+      "note": "19 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1005-offutt-afb-ne-0630",
+      "origin": "suu",
+      "date": "2026-10-05",
+      "roll": "06:30",
+      "dest": "Offutt AFB, NE",
+      "destKey": "offutt afb, ne offutt afb, ne",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1005-jb-elmendorf-richardson-ak-1220",
+      "origin": "suu",
+      "date": "2026-10-05",
+      "roll": "12:20",
+      "dest": "JB Elmendorf-Richardson, AK",
+      "destKey": "jb elmendorf-richardson, ak jb elmendorf-richardson, ak",
+      "seats": "53F",
+      "kind": "firm",
+      "note": "53 firm seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1005-jb-lewis-mcchord-wa-2115",
+      "origin": "suu",
+      "date": "2026-10-05",
+      "roll": "21:15",
+      "dest": "JB Lewis-McChord, WA",
+      "destKey": "jb lewis-mcchord, wa jb lewis-mcchord, wa",
       "seats": "53T",
       "kind": "tent",
       "note": "53 tentative seats posted",

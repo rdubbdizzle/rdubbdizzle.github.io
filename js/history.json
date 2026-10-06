@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05T21:28:09Z",
+  "updatedAt": "2026-10-06T08:36:01Z",
   "rows": [
     {
       "id": "suu-2026-10-05-offutt-afb-ne-53T",
@@ -7,6 +7,17 @@
       "date": "2026-10-05",
       "roll": "06:30",
       "dest": "Offutt AFB, NE",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-10-05-jb-lewis-mcchord-wa-53T",
+      "origin": "suu",
+      "date": "2026-10-05",
+      "roll": "21:15",
+      "dest": "JB Lewis-McChord, WA",
       "released": "53T",
       "used": "",
       "cat": "",

@@ -1,6 +1,6 @@
 {
   "asOf": "2026-10-09T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 9 Oct 2026",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -8,15 +8,9 @@
       "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
       "asOfLabel": "McChord · 1 Oct 2026, 0600L",
       "horizon": "72hr"
-    },
-    {
-      "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_09OCT26.pdf",
-      "asOfLabel": "Travis · 9 Oct 2026",
-      "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-10-09T19:21:27Z",
+  "fetchedAt": "2026-10-10T08:09:26Z",
   "flights": [
     {
       "id": "tcm-1001-harry-reid-intl-nv-0600",

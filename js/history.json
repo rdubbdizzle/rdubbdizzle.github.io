@@ -1,6 +1,72 @@
 {
-  "updatedAt": "2026-10-13T20:10:21Z",
+  "updatedAt": "2026-10-14T07:11:34Z",
   "rows": [
+    {
+      "id": "suu-2026-10-13-march-arb-ca-19T",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "20:40",
+      "dest": "March ARB, CA",
+      "released": "19T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-10-13-jb-pearl-harbor-hickam-hi-osan-ab-korea-yokota-a-TBD",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "13:55",
+      "dest": "JB Pearl Harbor-Hickam, HI / Osan AB, Korea / Yokota AB, Japan",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-10-13-jb-pearl-harbor-hickam-hi-TBD",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "05:25",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-10-13-jb-pearl-harbor-hickam-hi-53T",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "08:10",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-10-13-jb-pearl-harbor-hickam-hi-73T",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "13:45",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-10-13-jb-elmendorf-richardson-ak-53F",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "05:40",
+      "dest": "JB Elmendorf-Richardson, AK",
+      "released": "53F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-10-12-jb-elmendorf-richardson-ak-53F",
       "origin": "suu",

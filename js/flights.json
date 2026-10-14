@@ -1,6 +1,6 @@
 {
   "asOf": "2026-10-13T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 13 Oct 2026",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 12 Oct 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,12 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_13OCT26.pdf",
-      "asOfLabel": "Travis · 13 Oct 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_12OCT26.pdf",
+      "asOfLabel": "Travis · 12 Oct 2026",
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-10-13T20:08:31Z",
+  "fetchedAt": "2026-10-14T07:10:08Z",
   "flights": [
     {
       "id": "tcm-1001-harry-reid-intl-nv-0600",
@@ -100,6 +100,78 @@
       "seats": "53T",
       "kind": "tent",
       "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1013-jb-pearl-harbor-hickam-hi-0525",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "05:25",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1013-jb-elmendorf-richardson-ak-0540",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "05:40",
+      "dest": "JB Elmendorf-Richardson, AK",
+      "destKey": "jb elmendorf-richardson, ak jb elmendorf-richardson, ak",
+      "seats": "53F",
+      "kind": "firm",
+      "note": "53 firm seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1013-jb-pearl-harbor-hickam-hi-0810",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "08:10",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1013-jb-pearl-harbor-hickam-hi-1345",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "13:45",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "73T",
+      "kind": "tent",
+      "note": "73 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1013-jb-pearl-harbor-hickam-hi-osan-ab-korea-yokota-a-1355",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "13:55",
+      "dest": "JB Pearl Harbor-Hickam, HI / Osan AB, Korea / Yokota AB, Japan",
+      "destKey": "jb pearl harbor-hickam, hi / osan ab, korea / yokota ab, japan jb pearl harbor-hickam, hi osan ab, korea yokota ab, japan hawaii honolulu",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1013-march-arb-ca-2040",
+      "origin": "suu",
+      "date": "2026-10-13",
+      "roll": "20:40",
+      "dest": "March ARB, CA",
+      "destKey": "march arb, ca march arb, ca",
+      "seats": "19T",
+      "kind": "tent",
+      "note": "19 tentative seats posted",
       "horizon": "72hr"
     }
   ]

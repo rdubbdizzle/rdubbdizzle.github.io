@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-10-14T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis PE · Sep 2026",
+  "asOf": "2026-10-15T06:00:00-07:00",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 15 Oct 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,37 +11,13 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_30DAY_01SEP2026.pdf",
-      "asOfLabel": "Travis PE · Sep 2026",
-      "horizon": "30day"
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_15OCT26.pdf",
+      "asOfLabel": "Travis · 15 Oct 2026",
+      "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-10-15T18:08:13Z",
+  "fetchedAt": "2026-10-16T06:44:55Z",
   "flights": [
-    {
-      "id": "suu-0912-er-terminal-september-2026-destinationroll-calld-1535",
-      "origin": "suu",
-      "date": "2026-09-12",
-      "roll": "15:35",
-      "dest": "Er Terminal September 2026 Destinationroll Calldate / Time JB Pearl Harbor-Hickam, HI (Patriot Express)",
-      "destKey": "er terminal september 2026 destinationroll calldate / time jb pearl harbor-hickam, hi (patriot express) er terminal september 2026 destinationroll calldate / time jb pearl harbor-hickam, hi (patriot express) patriot express rotator hickam hawaii honolulu",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "30day"
-    },
-    {
-      "id": "suu-0926-jb-pearl-harbor-hickam-hi-patriot-express-1535",
-      "origin": "suu",
-      "date": "2026-09-26",
-      "roll": "15:35",
-      "dest": "JB Pearl Harbor-Hickam, HI (Patriot Express)",
-      "destKey": "jb pearl harbor-hickam, hi (patriot express) jb pearl harbor-hickam, hi (patriot express) patriot express rotator hickam hawaii honolulu",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "30day"
-    },
     {
       "id": "tcm-1001-harry-reid-intl-nv-0600",
       "origin": "tcm",

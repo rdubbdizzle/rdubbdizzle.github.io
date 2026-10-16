@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-16T06:48:49Z",
+  "updatedAt": "2026-10-16T17:55:25Z",
   "rows": [
     {
       "id": "suu-2026-10-13-march-arb-ca-19T",
@@ -68,6 +68,16 @@
       "source": "72hr"
     },
     {
+      "id": "tcm-2026-10-12-travis-afb-ca-53",
+      "origin": "tcm",
+      "date": "2026-10-12",
+      "dest": "Travis AFB, CA",
+      "released": "53",
+      "used": "0",
+      "cat": "",
+      "source": "rollcall"
+    },
+    {
       "id": "suu-2026-10-12-jb-elmendorf-richardson-ak-53F",
       "origin": "suu",
       "date": "2026-10-12",
@@ -112,6 +122,16 @@
       "source": "72hr"
     },
     {
+      "id": "tcm-2026-10-08-ramstein-ab-germany-25",
+      "origin": "tcm",
+      "date": "2026-10-08",
+      "dest": "Ramstein AB, Germany",
+      "released": "25",
+      "used": "1",
+      "cat": "IV",
+      "source": "rollcall"
+    },
+    {
       "id": "suu-2026-10-08-jb-pearl-harbor-hickam-hi-kadena-ab-japan-yokota-71T",
       "origin": "suu",
       "date": "2026-10-08",
@@ -132,6 +152,16 @@
       "used": "",
       "cat": "",
       "source": "72hr"
+    },
+    {
+      "id": "tcm-2026-10-07-joint-base-elmendorf-richardson-ak-53",
+      "origin": "tcm",
+      "date": "2026-10-07",
+      "dest": "Joint Base Elmendorf-Richardson, AK",
+      "released": "53",
+      "used": "1",
+      "cat": "VI",
+      "source": "rollcall"
     },
     {
       "id": "suu-2026-10-05-offutt-afb-ne-53T",

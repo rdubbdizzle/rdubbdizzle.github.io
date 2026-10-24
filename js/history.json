@@ -1,6 +1,17 @@
 {
-  "updatedAt": "2026-10-24T06:52:30Z",
+  "updatedAt": "2026-10-24T17:21:42Z",
   "rows": [
+    {
+      "id": "suu-2026-10-24-jb-pearl-harbor-hickam-hi-andersen-afb-guam-yoko-73T",
+      "origin": "suu",
+      "date": "2026-10-24",
+      "roll": "06:40",
+      "dest": "JB Pearl Harbor-Hickam, HI, Andersen AFB, Guam / Yokota AB, Japan",
+      "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-10-23-jb-lewis-mcchord-wa-53T",
       "origin": "suu",

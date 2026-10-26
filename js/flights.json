@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-10-24T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 24 Oct 2026",
+  "asOf": "2026-10-25T06:00:00-07:00",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 25 Oct 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,12 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_24OCT26.pdf",
-      "asOfLabel": "Travis · 24 Oct 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_25OCT26.pdf",
+      "asOfLabel": "Travis · 25 Oct 2026",
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-10-25T07:17:08Z",
+  "fetchedAt": "2026-10-26T07:25:28Z",
   "flights": [
     {
       "id": "tcm-1001-harry-reid-intl-nv-0600",
@@ -103,30 +103,6 @@
       "horizon": "72hr"
     },
     {
-      "id": "suu-1025-jb-elmendorf-richardson-akyokota-ab-japan-1335",
-      "origin": "suu",
-      "date": "2026-10-25",
-      "roll": "13:35",
-      "dest": "JB Elmendorf-Richardson, Akyokota AB, Japan",
-      "destKey": "jb elmendorf-richardson, akyokota ab, japan jb elmendorf-richardson, akyokota ab, japan",
-      "seats": "7F",
-      "kind": "firm",
-      "note": "7 firm seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "suu-1026-north-island-nas-ca-0525",
-      "origin": "suu",
-      "date": "2026-10-26",
-      "roll": "05:25",
-      "dest": "North Island NAS, CA",
-      "destKey": "north island nas, ca north island nas, ca",
-      "seats": "73T",
-      "kind": "tent",
-      "note": "73 tentative seats posted",
-      "horizon": "72hr"
-    },
-    {
       "id": "suu-1026-march-arb-ca-0845",
       "origin": "suu",
       "date": "2026-10-26",
@@ -136,6 +112,66 @@
       "seats": "19T",
       "kind": "tent",
       "note": "19 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1027-hill-afb-ut-0240",
+      "origin": "suu",
+      "date": "2026-10-27",
+      "roll": "02:40",
+      "dest": "Hill AFB, UT",
+      "destKey": "hill afb, ut hill afb, ut",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1027-jb-elmendorf-richardson-ak-yokota-ab-japan-osan--0555",
+      "origin": "suu",
+      "date": "2026-10-27",
+      "roll": "05:55",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Osan AB, Korea",
+      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan / osan ab, korea jb elmendorf-richardson, ak yokota ab, japan osan ab, korea",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1027-north-island-nas-ca-0625",
+      "origin": "suu",
+      "date": "2026-10-27",
+      "roll": "06:25",
+      "dest": "North Island NAS, CA",
+      "destKey": "north island nas, ca north island nas, ca",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1027-jb-elmendorf-richardson-akyokota-ab-japan-0835",
+      "origin": "suu",
+      "date": "2026-10-27",
+      "roll": "08:35",
+      "dest": "JB Elmendorf-Richardson, Akyokota AB, Japan",
+      "destKey": "jb elmendorf-richardson, akyokota ab, japan jb elmendorf-richardson, akyokota ab, japan",
+      "seats": "7F",
+      "kind": "firm",
+      "note": "7 firm seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1027-north-island-nas-ca-0925",
+      "origin": "suu",
+      "date": "2026-10-27",
+      "roll": "09:25",
+      "dest": "North Island NAS, CA",
+      "destKey": "north island nas, ca north island nas, ca",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
       "horizon": "72hr"
     }
   ]

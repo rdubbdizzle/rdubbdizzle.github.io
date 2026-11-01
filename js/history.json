@@ -1,6 +1,17 @@
 {
-  "updatedAt": "2026-11-01T08:45:13Z",
+  "updatedAt": "2026-11-01T18:50:22Z",
   "rows": [
+    {
+      "id": "suu-2026-11-01-andersen-afb-guam-73T",
+      "origin": "suu",
+      "date": "2026-11-01",
+      "roll": "06:25",
+      "dest": "Andersen AFB, Guam",
+      "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-10-26-march-arb-ca-19F",
       "origin": "suu",

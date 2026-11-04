@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-11-02T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 2 Nov 2026",
+  "asOf": "2026-11-03T06:00:00-07:00",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 3 Nov 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,12 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_02NOV26.pdf",
-      "asOfLabel": "Travis · 2 Nov 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_03NOV26.pdf",
+      "asOfLabel": "Travis · 3 Nov 2026",
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-11-04T08:39:40Z",
+  "fetchedAt": "2026-11-04T20:43:22Z",
   "flights": [
     {
       "id": "tcm-1001-harry-reid-intl-nv-0600",
@@ -97,6 +97,78 @@
       "roll": "12:00",
       "dest": "Travis AFB, CA",
       "destKey": "travis afb, ca tra vis afb, ca",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1103-jb-elmendorf-richardson-ak-yokota-ab-japan-kaden-0925",
+      "origin": "suu",
+      "date": "2026-11-03",
+      "roll": "09:25",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Kadena AB, Japan",
+      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan / kadena ab, japan jb elmendorf-richardson, ak yokota ab, japan kadena ab, japan",
+      "seats": "12F",
+      "kind": "firm",
+      "note": "12 firm seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1103-march-arb-ca-1120",
+      "origin": "suu",
+      "date": "2026-11-03",
+      "roll": "11:20",
+      "dest": "March ARB, CA",
+      "destKey": "march arb, ca march arb, ca",
+      "seats": "19F",
+      "kind": "firm",
+      "note": "19 firm seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1104-jb-pearl-harbor-hickam-hi-0940",
+      "origin": "suu",
+      "date": "2026-11-04",
+      "roll": "09:40",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1104-jb-andrews-md-1040",
+      "origin": "suu",
+      "date": "2026-11-04",
+      "roll": "10:40",
+      "dest": "JB Andrews, MD",
+      "destKey": "jb andrews, md jb andrews, md",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1105-jb-pearl-harbor-hickam-hi-0540",
+      "origin": "suu",
+      "date": "2026-11-05",
+      "roll": "05:40",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "73T",
+      "kind": "tent",
+      "note": "73 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1105-jb-elmendorf-richardson-ak-0640",
+      "origin": "suu",
+      "date": "2026-11-05",
+      "roll": "06:40",
+      "dest": "JB Elmendorf-Richardson, AK",
+      "destKey": "jb elmendorf-richardson, ak jb elmendorf-richardson, ak",
       "seats": "53T",
       "kind": "tent",
       "note": "53 tentative seats posted",

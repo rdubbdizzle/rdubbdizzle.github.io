@@ -1,6 +1,28 @@
 {
-  "updatedAt": "2026-11-05T09:03:03Z",
+  "updatedAt": "2026-11-05T20:59:40Z",
   "rows": [
+    {
+      "id": "suu-2026-11-05-jb-pearl-harbor-hickam-hi-73T",
+      "origin": "suu",
+      "date": "2026-11-05",
+      "roll": "05:40",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "released": "73T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-11-05-jb-elmendorf-richardson-ak-53T",
+      "origin": "suu",
+      "date": "2026-11-05",
+      "roll": "06:40",
+      "dest": "JB Elmendorf-Richardson, AK",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-11-04-jb-pearl-harbor-hickam-hi-53T",
       "origin": "suu",

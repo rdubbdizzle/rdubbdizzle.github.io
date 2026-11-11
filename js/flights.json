@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-11-09T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 9 Nov 2026",
+  "asOf": "2026-11-10T06:00:00-07:00",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 10 Nov 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,12 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_09NOV26.pdf",
-      "asOfLabel": "Travis · 9 Nov 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_10NOV26.pdf",
+      "asOfLabel": "Travis · 10 Nov 2026",
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-11-10T09:16:51Z",
+  "fetchedAt": "2026-11-11T08:53:44Z",
   "flights": [
     {
       "id": "tcm-1001-harry-reid-intl-nv-0600",
@@ -103,12 +103,96 @@
       "horizon": "72hr"
     },
     {
-      "id": "suu-1111-73t-jb-pearl-harbor-hickam-hi-andersen-afb-guam--0510",
+      "id": "suu-1110-fairchild-afb-wa-0840",
+      "origin": "suu",
+      "date": "2026-11-10",
+      "roll": "08:40",
+      "dest": "Fairchild AFB, WA",
+      "destKey": "fairchild afb, wa fairchild afb, wa",
+      "seats": "10T",
+      "kind": "tent",
+      "note": "10 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1110-jb-pearl-harbor-hickam-hi-1355",
+      "origin": "suu",
+      "date": "2026-11-10",
+      "roll": "13:55",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1110-jb-elmendorf-richardson-ak-yokota-ab-japan-1420",
+      "origin": "suu",
+      "date": "2026-11-10",
+      "roll": "14:20",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan",
+      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan jb elmendorf-richardson, ak yokota ab, japan",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1111-jb-pearl-harbor-hickam-hi-andersen-afb-guam-kade-0535",
       "origin": "suu",
       "date": "2026-11-11",
-      "roll": "05:10",
-      "dest": "73T JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam / Yokota AB, Japan 0540 53Tjb Pearl Harbor-Hickam, Hi0710",
-      "destKey": "73t jb pearl harbor-hickam, hi / andersen afb, guam / yokota ab, japan 0540 53tjb pearl harbor-hickam, hi0710 73t jb pearl harbor-hickam, hi andersen afb, guam yokota ab, japan 0540 53tjb pearl harbor-hickam, hi0710 hawaii honolulu",
+      "roll": "05:35",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam / Kadena AB, Japan / Osan AB, Korea",
+      "destKey": "jb pearl harbor-hickam, hi / andersen afb, guam / kadena ab, japan / osan ab, korea jb pearl harbor-hickam, hi andersen afb, guam kadena ab, japan osan ab, korea hawaii honolulu",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1111-jb-pearl-harbor-hickam-hi-andersen-afb-guam-yoko-0540",
+      "origin": "suu",
+      "date": "2026-11-11",
+      "roll": "05:40",
+      "dest": "JB Pearl Harbor-Hickam, HI / Andersen AFB, Guam / Yokota AB, Japan",
+      "destKey": "jb pearl harbor-hickam, hi / andersen afb, guam / yokota ab, japan jb pearl harbor-hickam, hi andersen afb, guam yokota ab, japan hawaii honolulu",
+      "seats": "73T",
+      "kind": "tent",
+      "note": "73 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1111-jb-pearl-harbor-hickam-hi-0710",
+      "origin": "suu",
+      "date": "2026-11-11",
+      "roll": "07:10",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1111-jb-elmendorf-richardson-ak-yokota-ab-japan-kaden-2255",
+      "origin": "suu",
+      "date": "2026-11-11",
+      "roll": "22:55",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Kadena AB, Japan",
+      "destKey": "jb elmendorf-richardson, ak / yokota ab, japan / kadena ab, japan jb elmendorf-richardson, ak yokota ab, japan kadena ab, japan",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1112-jb-pearl-harbor-hickam-hi-0840",
+      "origin": "suu",
+      "date": "2026-11-12",
+      "roll": "08:40",
+      "dest": "JB Pearl Harbor-Hickam, HI",
+      "destKey": "jb pearl harbor-hickam, hi jb pearl harbor-hickam, hi hawaii honolulu",
       "seats": "TBD",
       "kind": "tbd",
       "note": "Seat count unpublished",

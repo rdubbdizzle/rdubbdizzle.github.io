@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-11-11T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 11 Nov 2026",
+  "asOf": "2026-11-12T06:00:00-07:00",
+  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 12 Nov 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,12 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_11NOV26.pdf",
-      "asOfLabel": "Travis · 11 Nov 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_12NOV26.pdf",
+      "asOfLabel": "Travis · 12 Nov 2026",
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-11-11T21:07:54Z",
+  "fetchedAt": "2026-11-12T21:22:25Z",
   "flights": [
     {
       "id": "tcm-1001-harry-reid-intl-nv-0600",
@@ -100,6 +100,18 @@
       "seats": "53T",
       "kind": "tent",
       "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1113-tbdjb-pearl-harbor-hickam-hi-andersen-afb-guam16-0740",
+      "origin": "suu",
+      "date": "2026-11-13",
+      "roll": "07:40",
+      "dest": "Tbdjb Pearl Harbor-Hickam, HI / Andersen AFB, Guam1610 53Tjb Lewis-McChord, Wa2010",
+      "destKey": "tbdjb pearl harbor-hickam, hi / andersen afb, guam1610 53tjb lewis-mcchord, wa2010 tbdjb pearl harbor-hickam, hi andersen afb, guam1610 53tjb lewis-mcchord, wa2010 hawaii honolulu",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
       "horizon": "72hr"
     }
   ]

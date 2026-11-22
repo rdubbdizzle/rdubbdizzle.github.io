@@ -1,6 +1,28 @@
 {
-  "updatedAt": "2026-11-22T09:27:10Z",
+  "updatedAt": "2026-11-22T20:39:05Z",
   "rows": [
+    {
+      "id": "suu-2026-11-22-jb-elmendorf-richardson-ak-yokota-ab-japan-kaden-TBD",
+      "origin": "suu",
+      "date": "2026-11-22",
+      "roll": "10:10",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan / Kadena AB, Japan",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "suu-2026-11-22-jb-elmendorf-richardson-ak-yokota-ab-japan-TBD",
+      "origin": "suu",
+      "date": "2026-11-22",
+      "roll": "09:10",
+      "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan",
+      "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-11-21-jb-pearl-harbor-hickam-hi-andersen-afb-guam-53T",
       "origin": "suu",

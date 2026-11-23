@@ -1,6 +1,17 @@
 {
-  "updatedAt": "2026-11-22T20:39:05Z",
+  "updatedAt": "2026-11-23T10:21:19Z",
   "rows": [
+    {
+      "id": "tcm-2026-11-22-joint-base-elmendorf-richardson-ak-53T",
+      "origin": "tcm",
+      "date": "2026-11-22",
+      "roll": "13:05",
+      "dest": "Joint Base Elmendorf-Richardson, AK",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "suu-2026-11-22-jb-elmendorf-richardson-ak-yokota-ab-japan-kaden-TBD",
       "origin": "suu",
@@ -19,6 +30,28 @@
       "roll": "09:10",
       "dest": "JB Elmendorf-Richardson, AK / Yokota AB, Japan",
       "released": "TBD",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "tcm-2026-11-21-ramstein-germany-0F",
+      "origin": "tcm",
+      "date": "2026-11-21",
+      "roll": "06:00",
+      "dest": "Ramstein, Germany",
+      "released": "0F",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
+    {
+      "id": "tcm-2026-11-21-guam-intl-guam-52F",
+      "origin": "tcm",
+      "date": "2026-11-21",
+      "roll": "08:00",
+      "dest": "Guam INTL, Guam",
+      "released": "52F",
       "used": "",
       "cat": "",
       "source": "72hr"

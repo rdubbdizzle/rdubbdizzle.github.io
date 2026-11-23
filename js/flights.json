@@ -1,12 +1,12 @@
 {
-  "asOf": "2026-11-20T06:00:00-07:00",
-  "asOfLabel": "McChord · 1 Oct 2026, 0600L  ·  Travis · 20 Nov 2026",
+  "asOf": "2026-11-20T18:30:00-07:00",
+  "asOfLabel": "McChord · 20 Nov 2026, 1830L  ·  Travis · 20 Nov 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
       "origin": "tcm",
       "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
-      "asOfLabel": "McChord · 1 Oct 2026, 0600L",
+      "asOfLabel": "McChord · 20 Nov 2026, 1830L",
       "horizon": "72hr"
     },
     {
@@ -16,92 +16,8 @@
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-11-20T21:43:43Z",
+  "fetchedAt": "2026-11-23T10:20:51Z",
   "flights": [
-    {
-      "id": "tcm-1001-harry-reid-intl-nv-0600",
-      "origin": "tcm",
-      "date": "2026-10-01",
-      "roll": "06:00",
-      "dest": "Harry Reid INTL, NV",
-      "destKey": "harry reid intl, nv harry reid intl, nv",
-      "seats": "53F",
-      "kind": "firm",
-      "note": "53 firm seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-1001-daniel-k-inouye-intl-hi-0700",
-      "origin": "tcm",
-      "date": "2026-10-01",
-      "roll": "07:00",
-      "dest": "Daniel K Inouye INTL, HI",
-      "destKey": "daniel k inouye intl, hi daniel k inouye intl, hi",
-      "seats": "0F",
-      "kind": "firm",
-      "note": "0 firm seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-1001-mcguire-afb-nj-1150",
-      "origin": "tcm",
-      "date": "2026-10-01",
-      "roll": "11:50",
-      "dest": "McGuire AFB, NJ",
-      "destKey": "mcguire afb, nj mguire afb, nj",
-      "seats": "53F",
-      "kind": "firm",
-      "note": "53 firm seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-1002-dover-afb-de-0600",
-      "origin": "tcm",
-      "date": "2026-10-02",
-      "roll": "06:00",
-      "dest": "Dover AFB, DE",
-      "destKey": "dover afb, de dover afb, de",
-      "seats": "53F",
-      "kind": "firm",
-      "note": "53 firm seats posted",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-1002-grand-junction-rgnl-co-0700",
-      "origin": "tcm",
-      "date": "2026-10-02",
-      "roll": "07:00",
-      "dest": "Grand Junction Rgnl, CO",
-      "destKey": "grand junction rgnl, co grand junction rgnl, co",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-1003-ramstein-ab-germany-1115",
-      "origin": "tcm",
-      "date": "2026-10-03",
-      "roll": "11:15",
-      "dest": "Ramstein AB, Germany",
-      "destKey": "ramstein ab, germany ramstein ab, germany",
-      "seats": "TBD",
-      "kind": "tbd",
-      "note": "Seat count unpublished",
-      "horizon": "72hr"
-    },
-    {
-      "id": "tcm-1003-travis-afb-ca-1200",
-      "origin": "tcm",
-      "date": "2026-10-03",
-      "roll": "12:00",
-      "dest": "Travis AFB, CA",
-      "destKey": "travis afb, ca tra vis afb, ca",
-      "seats": "53T",
-      "kind": "tent",
-      "note": "53 tentative seats posted",
-      "horizon": "72hr"
-    },
     {
       "id": "suu-1121-jb-pearl-harbor-hickam-hi-andersen-afb-guam-0440",
       "origin": "suu",
@@ -124,6 +40,30 @@
       "seats": "TBD",
       "kind": "tbd",
       "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-1121-ramstein-germany-0600",
+      "origin": "tcm",
+      "date": "2026-11-21",
+      "roll": "06:00",
+      "dest": "Ramstein, Germany",
+      "destKey": "ramstein, germany ramstein, germany",
+      "seats": "0F",
+      "kind": "firm",
+      "note": "0 firm seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-1121-guam-intl-guam-0800",
+      "origin": "tcm",
+      "date": "2026-11-21",
+      "roll": "08:00",
+      "dest": "Guam INTL, Guam",
+      "destKey": "guam intl, guam guam intl, guam",
+      "seats": "52F",
+      "kind": "firm",
+      "note": "52 firm seats posted",
       "horizon": "72hr"
     },
     {
@@ -160,6 +100,18 @@
       "seats": "TBD",
       "kind": "tbd",
       "note": "Seat count unpublished",
+      "horizon": "72hr"
+    },
+    {
+      "id": "tcm-1122-joint-base-elmendorf-richardson-ak-1305",
+      "origin": "tcm",
+      "date": "2026-11-22",
+      "roll": "13:05",
+      "dest": "Joint Base Elmendorf-Richardson, AK",
+      "destKey": "joint base elmendorf-richardson, ak joint base elmendorf-richardson, ak",
+      "seats": "53T",
+      "kind": "tent",
+      "note": "53 tentative seats posted",
       "horizon": "72hr"
     }
   ]

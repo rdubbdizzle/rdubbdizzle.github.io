@@ -1,6 +1,6 @@
 {
-  "asOf": "2026-11-23T06:00:00-07:00",
-  "asOfLabel": "McChord · 20 Nov 2026, 1830L  ·  Travis · 23 Nov 2026",
+  "asOf": "2026-11-24T06:00:00-07:00",
+  "asOfLabel": "McChord · 20 Nov 2026, 1830L  ·  Travis · 24 Nov 2026",
   "sourceUrl": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Joint%20Base%20Lewis-McChord%20Passenger%20Terminal/TCM72hr.pdf",
   "sources": [
     {
@@ -11,12 +11,12 @@
     },
     {
       "origin": "suu",
-      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_23NOV26.pdf",
-      "asOfLabel": "Travis · 23 Nov 2026",
+      "url": "https://www.amc.af.mil/Portals/12/AMC%20Tvl%20Pg/Passenger%20Terminals/AMC%20CONUS%20Terminals/Travis%20Passenger%20Terminal/TRAVIS_72HRS_24NOV26.pdf",
+      "asOfLabel": "Travis · 24 Nov 2026",
       "horizon": "72hr"
     }
   ],
-  "fetchedAt": "2026-11-24T01:32:41Z",
+  "fetchedAt": "2026-11-24T23:26:12Z",
   "flights": [
     {
       "id": "tcm-1121-ramstein-germany-0600",
@@ -52,6 +52,18 @@
       "seats": "53T",
       "kind": "tent",
       "note": "53 tentative seats posted",
+      "horizon": "72hr"
+    },
+    {
+      "id": "suu-1125-53tjb-lewis-mcchord-wa0640-0540",
+      "origin": "suu",
+      "date": "2026-11-25",
+      "roll": "05:40",
+      "dest": "53Tjb Lewis-McChord, Wa0640",
+      "destKey": "53tjb lewis-mcchord, wa0640 53tjb lewis-mcchord, wa0640",
+      "seats": "TBD",
+      "kind": "tbd",
+      "note": "Seat count unpublished",
       "horizon": "72hr"
     }
   ]

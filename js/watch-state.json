@@ -40,9 +40,12 @@
     "travis-hawaii:suu-1120-jb-pearl-harbor-hickam-hi-2245",
     "travis-hawaii:suu-1121-jb-pearl-harbor-hickam-hi-0940",
     "travis-hawaii:suu-1121-jb-pearl-harbor-hickam-hi-andersen-afb-guam-0440",
+    "travis-hawaii:suu-1127-jb-pearl-harbor-hickam-hi-andersen-afb-guam-1110",
+    "travis-hawaii:suu-1127-jb-pearl-harbor-hickam-hi-kadena-ab-japan-yokota-1545",
     "travis-hawaii:suu-1127-tbdjb-pearl-harbor-hickam-hi-andersen-afb-guam11-0710"
   ],
   "lastMatches": [
-    "travis-hawaii:suu-1127-tbdjb-pearl-harbor-hickam-hi-andersen-afb-guam11-0710"
+    "travis-hawaii:suu-1127-jb-pearl-harbor-hickam-hi-andersen-afb-guam-1110",
+    "travis-hawaii:suu-1127-jb-pearl-harbor-hickam-hi-kadena-ab-japan-yokota-1545"
   ]
 }

@@ -1,6 +1,17 @@
 {
-  "updatedAt": "2026-11-26T10:29:04Z",
+  "updatedAt": "2026-11-26T22:53:41Z",
   "rows": [
+    {
+      "id": "suu-2026-11-26-jb-lewis-mcchord-wa-53T",
+      "origin": "suu",
+      "date": "2026-11-26",
+      "roll": "14:00",
+      "dest": "JB Lewis-McChord, WA",
+      "released": "53T",
+      "used": "",
+      "cat": "",
+      "source": "72hr"
+    },
     {
       "id": "tcm-2026-11-22-joint-base-elmendorf-richardson-ak-53T",
       "origin": "tcm",
